@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="$(MSBuildProjectDirectory)\Properties\Directory.Build.props" />
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
@@ -15,6 +16,7 @@
 	</PropertyGroup>
 	<ItemGroup>
 	  <Compile Include="Core.cs" />
+	  <Compile Include="Data\ModRegistries.cs" />
 	  <Compile Include="Items.cs" />
 	  <Compile Include="KeyCardPatch.cs" />
 	  <Compile Include="ModClients.cs" />
@@ -23,6 +25,8 @@
 	  <Compile Include="SpriteShapePatch.cs" />
 	  <Compile Include="ThiefPatch.cs" />
 	  <Compile Include="ToolboxPatch.cs" />
+	  <Compile Include="UI\DebugInventory.cs" />
+	  <Compile Include="UI\DebugPanel.cs" />
 	  <EmbeddedResource Include="Textures\*.png" />
 	</ItemGroup>
 

@@ -153,7 +153,7 @@ namespace ProbablyNuclear
             //gameItem.canSelectSlotItemFunc = (GameItem item, GameInventory _, SlotMarker _) => true;
             //gameItem.mayItemTargetItemFunc = (GameItem s, GameItem t) => GeneralHelper.IsItemOwned(s) && GeneralHelper.IsItemOwned(t) && LockHelper.IsLockedContainer(t);
             //gameItem.canItemTargetItemFunc = (GameItem s, GameItem t) => GeneralHelper.IsItemOwned(s) && GeneralHelper.IsItemOwned(t) && LockHelper.IsLockedContainer(t);
-
+            /*
             gameItem.maySelectSlotItemFunc = (Func<GameItem, GameInventory, SlotMarker, bool>) delegate (GameItem _, GameInventory _, SlotMarker _) { return true; };
             gameItem.canSelectSlotItemFunc = (Func<GameItem, GameInventory, SlotMarker, bool>)delegate (GameItem _, GameInventory _, SlotMarker _) { return true; };
             gameItem.mayItemTargetItemFunc = (Func<GameItem, GameItem, bool>)delegate (GameItem s, GameItem t) 
@@ -167,7 +167,9 @@ namespace ProbablyNuclear
             gameItem.onItemTargetItemFunc = (Action<GameItem, GameItem>)delegate (GameItem s, GameItem t)
             {
                 LockHelper.TryOpenLock(s, t, "LOCK_ID_EMAG");
-            };
+            };*/
+
+            //EMAG either needs proper Delegate Support of to override the item on use.
 
             return gameItem;
         }
