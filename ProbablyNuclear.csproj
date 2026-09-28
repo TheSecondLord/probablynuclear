@@ -14,11 +14,12 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 	<ItemGroup>
+	  <Compile Include="ActionPatch.cs" />
 	  <Compile Include="Core.cs" />
 	  <Compile Include="Items.cs" />
-	  <Compile Include="KeyCardPatch.cs" />
 	  <Compile Include="ModClients.cs" />
 	  <Compile Include="ModCorpos.cs" />
+	  <Compile Include="ModLockHandler.cs" />
 	  <Compile Include="ModPreBuiltItems.cs" />
 	  <Compile Include="SpriteShapePatch.cs" />
 	  <Compile Include="ThiefPatch.cs" />

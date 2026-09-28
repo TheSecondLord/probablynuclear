@@ -9,9 +9,12 @@ namespace ProbablyNuclear;
 
 public class Core : MelonMod
 {
+    public static HashSet<string> canActivateIds = new HashSet<string> { };
+
     public override void OnInitializeMelon()
     {
         LoggerInstance.Msg("Probably Nuclear initialized.");
+        canActivateIds.Add("emag");
 
         ModHook.OnCreateTooltipEarly += (Action<RichTextBuilder, GameItem>) delegate (RichTextBuilder builder, GameItem gameItem)
         {

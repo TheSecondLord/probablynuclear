@@ -8,14 +8,10 @@ namespace ProbablyNuclear
     {
         static bool Prefix(string spriteAtlasPath, string spritePath, ref GameItem __result, ref GameItem __instance)
         {
-            foreach (LoadedMod mod in ModLoader.Mods)
+            if (spritePath == "syndicate_box.png_u")
             {
-                if (mod.Manifest.ID.Equals(spriteAtlasPath))
-                {
-                    //__result = __instance.SetSpriteAndShapeFromMod(spriteAtlasPath, spritePath);
-                    __result = Items.ModdedShape(ref __instance, spriteAtlasPath);
-                    return false;
-                }
+                __result = Items.ModdedShape(ref __instance, "syndicate_box_u");
+                return false;
             }
             return true;
         }

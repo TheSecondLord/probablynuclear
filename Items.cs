@@ -50,7 +50,7 @@ namespace ProbablyNuclear
             string text = null;
             foreach (string text2 in assembly.GetManifestResourceNames())
             {
-                MelonLogger.Msg("Searched " + text2);
+                //MelonLogger.Msg("Searched " + text2);
                 if (text2.EndsWith(resourceSuffix, StringComparison.OrdinalIgnoreCase))
                 {
                     text = text2;
@@ -156,17 +156,9 @@ namespace ProbablyNuclear
 
             gameItem.maySelectSlotItemFunc = (Func<GameItem, GameInventory, SlotMarker, bool>) delegate (GameItem _, GameInventory _, SlotMarker _) { return true; };
             gameItem.canSelectSlotItemFunc = (Func<GameItem, GameInventory, SlotMarker, bool>)delegate (GameItem _, GameInventory _, SlotMarker _) { return true; };
-            gameItem.mayItemTargetItemFunc = (Func<GameItem, GameItem, bool>)delegate (GameItem s, GameItem t) 
-            { 
-                return GeneralHelper.IsItemOwned(s) && GeneralHelper.IsItemOwned(t) && LockHelper.IsLockedContainer(t); 
-            };
-            gameItem.canItemTargetItemFunc = (Func<GameItem, GameItem, bool>)delegate (GameItem s, GameItem t) 
-            { 
-                return GeneralHelper.IsItemOwned(s) && GeneralHelper.IsItemOwned(t) && LockHelper.IsLockedContainer(t); 
-            };
             gameItem.onItemTargetItemFunc = (Action<GameItem, GameItem>)delegate (GameItem s, GameItem t)
             {
-                LockHelper.TryOpenLock(s, t, "LOCK_ID_EMAG");
+                ModLockHandler.TryOpenLock(s, t, "LOCK_ID_EMAG");
             };
 
             return gameItem;
