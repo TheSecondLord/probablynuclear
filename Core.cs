@@ -1,5 +1,6 @@
 ﻿using Il2Cpp;
 using MelonLoader;
+using ProbablyNuclear.Data;
 using System.Reflection;
 
 [assembly: MelonInfo(typeof(ProbablyNuclear.Core), "ProbablyNuclear", "0.1.0", "Lord", null)]
@@ -41,5 +42,12 @@ public class Core : MelonMod
             manager.AddClient(client);
         };
 
+        ModHook.OnGameLoadedLate += (Action)delegate ()
+        {
+            LoggerInstance.Msg("Game loaded, adding modded items mod registries.");
+            ModRegistries.Build();
+        };
     }
+
+    
 }
