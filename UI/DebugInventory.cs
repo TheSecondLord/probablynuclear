@@ -1,4 +1,6 @@
 ﻿using Il2Cpp;
+using HarmonyLib;
+using Il2CppES3Types;
 using Il2CppInterop.Runtime;
 using MelonLoader;
 using ProbablyNuclear.Data;
@@ -21,6 +23,7 @@ namespace ProbablyNuclear.UI
             {
                 _window.Hide();
                 _window.handler.SetParentTempRoot();
+                _populated = false;
                 return;
             }
 
@@ -53,16 +56,16 @@ namespace ProbablyNuclear.UI
             {
                 return;
             }
-
-            Il2CppSystem.Collections.Generic.List<GameItem> items = ModRegistries.NuclearItems;
+            Il2CppSystem.Collections.Generic.List<GameItem>  items = ModRegistries.NuclearItems;
             _inventory.AddFastUnchecked(items);
 
             foreach (GameItem item in _inventory.childItems)
             {
-                item.shortDescription = "ID: " + item.identifier + ((item.shortDescription.Length > 0) ? ("\n" + item.shortDescription) : "");
-                item.SetAmount(1);
                 GeneralHelper.SetItemOwned(item, true);
-             }
+                item.isDebugMenu = true;
+                item.SetAmount(2);
+                GameItemFuncWrapper.ApplyChangeWrapper(item);
+            }
             
             _inventory.Validate();
             _populated = true;

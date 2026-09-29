@@ -16,6 +16,7 @@
 	<ItemGroup>
 	  <Compile Include="ActionPatch.cs" />
 	  <Compile Include="Core.cs" />
+	  <Compile Include="Data\GameItemFuncWrapper.cs" />
 	  <Compile Include="Data\ModRegistries.cs" />
 	  <Compile Include="Items.cs" />
 	  <Compile Include="ModClients.cs" />
