@@ -23,7 +23,6 @@
 	  <Compile Include="ModPreBuiltItems.cs" />
 	  <Compile Include="SpriteShapePatch.cs" />
 	  <Compile Include="ThiefPatch.cs" />
-	  <Compile Include="ToolboxPatch.cs" />
 	  <EmbeddedResource Include="Textures\*.png" />
 	</ItemGroup>
 

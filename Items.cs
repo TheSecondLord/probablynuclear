@@ -1,4 +1,3 @@
-using HarmonyLib;
 using MelonLoader;
 using Il2Cpp;
 using UnityEngine;
@@ -149,11 +148,6 @@ namespace ProbablyNuclear
             AudioHelper.InitPlasticCard(gameItem);
             ContrabandHelper.InitContrabandItem(gameItem, 4);
 
-            //gameItem.maySelectSlotItemFunc = (GameItem item, GameInventory _, SlotMarker _) => true;
-            //gameItem.canSelectSlotItemFunc = (GameItem item, GameInventory _, SlotMarker _) => true;
-            //gameItem.mayItemTargetItemFunc = (GameItem s, GameItem t) => GeneralHelper.IsItemOwned(s) && GeneralHelper.IsItemOwned(t) && LockHelper.IsLockedContainer(t);
-            //gameItem.canItemTargetItemFunc = (GameItem s, GameItem t) => GeneralHelper.IsItemOwned(s) && GeneralHelper.IsItemOwned(t) && LockHelper.IsLockedContainer(t);
-
             gameItem.maySelectSlotItemFunc = (Func<GameItem, GameInventory, SlotMarker, bool>) delegate (GameItem _, GameInventory _, SlotMarker _) { return true; };
             gameItem.canSelectSlotItemFunc = (Func<GameItem, GameInventory, SlotMarker, bool>)delegate (GameItem _, GameInventory _, SlotMarker _) { return true; };
             gameItem.onItemTargetItemFunc = (Action<GameItem, GameItem>)delegate (GameItem s, GameItem t)
@@ -268,20 +262,6 @@ namespace ProbablyNuclear
             gameItem.flavorText = "Are you sure that whatever you're doing is really worth it?";
             AudioHelper.InitCassette(gameItem);
             ContrabandHelper.InitContrabandItem(gameItem, 4);
-
-            return gameItem;
-        }
-
-        public static GameItem SuspiciousToolbox()
-        {
-            GameItem gameItem = DirectoryMaster.Item("toolbox");
-            gameItem.identifier = "suspicious_toolbox";
-            ModdedShape(ref gameItem, "suspicious_toolbox_old");
-            gameItem.SetName("Suspicious Toolbox");
-            gameItem.SetGameItemType("WEAPON");
-            gameItem.SetValue(175L);
-            gameItem.flavorText = "Designed both for holding tools and for violently swinging at people's heads.";
-            ContrabandHelper.InitContrabandItem(gameItem, 2);
 
             return gameItem;
         }

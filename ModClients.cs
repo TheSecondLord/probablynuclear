@@ -18,8 +18,7 @@ namespace ProbablyNuclear
                 .SetText(storeClient.displayName, "Don't let it fall into the wrong hands. If you do, They'll know.")
                 .SetEndAction((Action)delegate
                 {
-                    PlayerStore.Instance.AddDirectSellingItemToTable(Items.SuspiciousToolbox());
-                    PlayerStore.Instance.AddDirectSellingItemToTable(DirectoryMaster.Item("scrap_metal"));
+                    PlayerStore.Instance.AddDirectSellingItemToTable(ModPreBuiltItems.LootCrateSyndicate());
                     PlayerStore.Instance.AddDirectSellingItemToTable(Items.Emag());
                     PlayerStore.Instance.AddDirectSellingItemToTable(Items.Uplink());
                     if (RNG.Roll(50))

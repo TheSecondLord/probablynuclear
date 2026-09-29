@@ -27,7 +27,6 @@ public class Core : MelonMod
             PlayerStore.Instance.ModCash(1000);
             Assembly assembly = typeof(Core).Assembly;
 
-            /*
             if (StoreReputation.GetBMReputation() >= 40 &&
                 StoreStation.Instance.dayCounter >= 14 &&
                 StoreStation.Instance.dayCounter % 2 == 0 &&
@@ -36,9 +35,6 @@ public class Core : MelonMod
                 StoreClient client = ModClients.CreateExSyndicateAgent();
                 manager.AddClient(client);
             }
-            */
-            StoreClient client = ModClients.CreateExSyndicateAgent();
-            manager.AddClient(client);
         };
 
     }
