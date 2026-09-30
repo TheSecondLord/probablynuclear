@@ -24,7 +24,6 @@ public class Core : MelonMod
 
         ModHook.OnGenerateCustomerNormal += (Action<StoreClientManager>) delegate (StoreClientManager manager)
         {
-            PlayerStore.Instance.ModCash(1000);
             Assembly assembly = typeof(Core).Assembly;
 
             if (StoreReputation.GetBMReputation() >= 40 &&
