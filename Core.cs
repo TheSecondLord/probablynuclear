@@ -25,7 +25,11 @@ public class Core : MelonMod
         ModHook.OnGenerateCustomerNormal += (Action<StoreClientManager>) delegate (StoreClientManager manager)
         {
             Assembly assembly = typeof(Core).Assembly;
+            PlayerStore.Instance.ModCash(1000);
+            StoreClient client = ModClients.CreateExSyndicateAgent();
+            manager.AddClient(client);
 
+            /*
             if (StoreReputation.GetBMReputation() >= 40 &&
                 StoreStation.Instance.dayCounter >= 14 &&
                 StoreStation.Instance.dayCounter % 2 == 0 &&
@@ -34,6 +38,8 @@ public class Core : MelonMod
                 StoreClient client = ModClients.CreateExSyndicateAgent();
                 manager.AddClient(client);
             }
+            */
+
         };
 
     }

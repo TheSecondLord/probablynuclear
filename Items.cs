@@ -8,7 +8,6 @@ namespace ProbablyNuclear
     {
         public static GameItem ModdedShape(ref GameItem item, string path)
         {
-            path += ".png";
             Sprite sprite = LoadEmbeddedPng(path);
             item.TryCast<GameItemElement>().background.image.sprite = sprite;
             item.TryCast<GameItemElement>().background.image.SetNativeSize();
@@ -45,6 +44,7 @@ namespace ProbablyNuclear
 
         public static Sprite LoadEmbeddedPng(string resourceSuffix)
         {
+            //MelonLogger.Msg(resourceSuffix);
             Assembly assembly = typeof(Core).Assembly;
             string text = null;
             foreach (string text2 in assembly.GetManifestResourceNames())
@@ -104,7 +104,7 @@ namespace ProbablyNuclear
         public static GameItem Cobra()
         {
             GameItem gameItem = ItemDirectory.CreateEmptyItem("cobra");
-            ModdedShape(ref gameItem, gameItem.identifier);
+            ModdedShape(ref gameItem, gameItem.identifier + ".png");
             gameItem.SetName("Cobra");
             gameItem.shortDescription = "Has a built-in silencer. Chambered in custom-made 10mm Caseless ammunition.";
             gameItem.flavorText = "A silenced pistol designed for stealthy assassinations.";
@@ -123,7 +123,7 @@ namespace ProbablyNuclear
             // Inherits screwdriver. Did you know you can use a cybersun pen as a screwdriver in ss14? Now you do!
             GameItem gameItem = DirectoryMaster.Item("screwdriver");
             gameItem.identifier = "cybersun_pen";
-            ModdedShape(ref gameItem, gameItem.identifier);
+            ModdedShape(ref gameItem, gameItem.identifier + ".png");
             gameItem.SetName("Cybersun Pen");
             gameItem.SetGameItemType("LUXURY_ITEM");
             gameItem.SetValue(90L);
@@ -138,7 +138,7 @@ namespace ProbablyNuclear
         public static GameItem Emag()
         {
             GameItem gameItem = ItemDirectory.CreateEmptyItem("emag");
-            ModdedShape(ref gameItem, gameItem.identifier);
+            ModdedShape(ref gameItem, gameItem.identifier + ".png");
             gameItem.SetName("EMAG");
             gameItem.SetValue(175L);
             gameItem.flavorText = "The Syndicate's iconic EMAG, created from a hacked ID card.";
@@ -161,7 +161,7 @@ namespace ProbablyNuclear
         public static GameItem EnergySword()
         {
             GameItem gameItem = ItemDirectory.CreateEmptyItem("energy_sword");
-            ModdedShape(ref gameItem, gameItem.identifier);
+            ModdedShape(ref gameItem, gameItem.identifier + ".png");
             gameItem.SetName("Energy Sword");
             gameItem.SetGameItemType("WEAPON");
             gameItem.SetGameItemType("MELEE_WEAPON");
@@ -176,7 +176,7 @@ namespace ProbablyNuclear
         public static GameItem HoloparasiteInjector()
         {
             GameItem gameItem = ItemDirectory.CreateEmptyItem("holoparasite_injector");
-            ModdedShape(ref gameItem, gameItem.identifier);
+            ModdedShape(ref gameItem, gameItem.identifier + ".png");
             gameItem.SetName("Holoparasite Injector");
             gameItem.SetGameItemType("WEAPON");
             gameItem.SetGameItemType("MEDICAL");
@@ -192,7 +192,7 @@ namespace ProbablyNuclear
         public static GameItem HyperzineInjector()
         {
             GameItem gameItem = ItemDirectory.CreateEmptyItem("hyperzine_injector");
-            ModdedShape(ref gameItem, gameItem.identifier);
+            ModdedShape(ref gameItem, gameItem.identifier + ".png");
             gameItem.SetName("Hyperzine Injector");
             gameItem.SetGameItemType("MEDICAL");
             gameItem.EnableTag("ITEM_MEDICAL_TAG");
@@ -209,7 +209,7 @@ namespace ProbablyNuclear
         public static GameItem Implanter()
         {
             GameItem gameItem = ItemDirectory.CreateEmptyItem("implanter");
-            ModdedShape(ref gameItem, gameItem.identifier);
+            ModdedShape(ref gameItem, gameItem.identifier + ".png");
             gameItem.SetName("Implanter");
             gameItem.SetGameItemType("MEDICAL");
             gameItem.EnableTag("ITEM_MEDICAL_TAG");
@@ -225,7 +225,7 @@ namespace ProbablyNuclear
         public static GameItem InterdyneHerbals()
         {
             GameItem gameItem = ItemDirectory.CreateEmptyItem("interdyne_herbals");
-            ModdedShape(ref gameItem, gameItem.identifier);
+            ModdedShape(ref gameItem, gameItem.identifier + ".png");
             gameItem.SetName("Interdyne Herbals");
             gameItem.EnableTag("CIGARETTE_TAG");
             gameItem.SetGameItemType("SUBSTANCE");
@@ -241,7 +241,7 @@ namespace ProbablyNuclear
         public static GameItem Minibomb()
         {
             GameItem gameItem = ItemDirectory.CreateEmptyItem("minibomb");
-            ModdedShape(ref gameItem, gameItem.identifier);
+            ModdedShape(ref gameItem, gameItem.identifier + ".png");
             gameItem.SetName("Minibomb");
             gameItem.SetGameItemType("WEAPON");
             gameItem.SetGameItemType("MUNITION");
@@ -256,7 +256,7 @@ namespace ProbablyNuclear
         public static GameItem NukeDisk()
         {
             GameItem gameItem = ItemDirectory.CreateEmptyItem("nuke_disk");
-            ModdedShape(ref gameItem, gameItem.identifier);
+            ModdedShape(ref gameItem, gameItem.identifier + ".png");
             gameItem.SetName("Nuke Disk");
             gameItem.EnableTag("IMPORTANT_TAG");
             gameItem.flavorText = "Are you sure that whatever you're doing is really worth it?";
@@ -269,7 +269,7 @@ namespace ProbablyNuclear
         public static GameItem SyndicateBox()
         {
             GameItem gameItem = ItemDirectory.CreateEmptyItem("syndicate_box");
-            ModdedShape(ref gameItem, gameItem.identifier);
+            ModdedShape(ref gameItem, gameItem.identifier + ".png");
             gameItem.SetName("Syndicate Armory Crate");
             gameItem.SetValue(325L);
             gameItem.shortDescription = "A locked crate. Painted with the Syndicate logo. Full of supplies. Unlikely to be opened by any standard station keycards.";
@@ -288,7 +288,7 @@ namespace ProbablyNuclear
         public static GameItem SyndicateBusinessCard()
         {
             GameItem gameItem = ItemDirectory.CreateEmptyItem("syndicate_business_card");
-            ModdedShape(ref gameItem, gameItem.identifier);
+            ModdedShape(ref gameItem, gameItem.identifier + ".png");
             gameItem.SetName("Syndicate Business Card");
             gameItem.EnableTag("IMPORTANT_TAG");
             gameItem.SetGameItemType("DOCUMENT");
@@ -302,7 +302,7 @@ namespace ProbablyNuclear
         {
             GameItem gameItem = ItemDirectory.CreateEmptyItem("syndicate_gas_mask");
             gameItem.identifier = "syndicate_gas_mask";
-            ModdedShape(ref gameItem, gameItem.identifier);
+            ModdedShape(ref gameItem, gameItem.identifier + ".png");
             gameItem.SetName("Syndicate Gas Mask");
             gameItem.SetValue(120L);
             gameItem.flavorText = "The visor is made from a protective material capable of both resisting impacts and shielding the wearer from bright lights.";
@@ -314,7 +314,7 @@ namespace ProbablyNuclear
         public static GameItem SyndicateSoap()
         {
             GameItem gameItem = ItemDirectory.CreateEmptyItem("syndicate_soap");
-            ModdedShape(ref gameItem, gameItem.identifier);
+            ModdedShape(ref gameItem, gameItem.identifier + ".png");
             gameItem.SetName("Syndicate Soap");
             gameItem.SetValue(20L);
             gameItem.flavorText = "A bar of scented soap. Deemed to be contraband for its Syndicate branding.";
@@ -329,7 +329,7 @@ namespace ProbablyNuclear
         public static GameItem Telecrystal()
         {
             GameItem gameItem = ItemDirectory.CreateEmptyItem("telecrystal");
-            ModdedShape(ref gameItem, gameItem.identifier);
+            ModdedShape(ref gameItem, gameItem.identifier + ".png");
             gameItem.SetName("Telecrystal");
             gameItem.SetValue(25L);
             gameItem.flavorText = "It hums with energy and glows a faint red.";
@@ -341,7 +341,7 @@ namespace ProbablyNuclear
         public static GameItem ThrowingKnife()
         {
             GameItem gameItem = ItemDirectory.CreateEmptyItem("throwing_knife");
-            ModdedShape(ref gameItem, gameItem.identifier);
+            ModdedShape(ref gameItem, gameItem.identifier + ".png");
             gameItem.SetName("Throwing Knife");
             gameItem.SetValue(80L);
             gameItem.flavorText = "A lightweight knife with an aerodynamic design and a point sharp enough to pierce armor.";
@@ -354,7 +354,7 @@ namespace ProbablyNuclear
         public static GameItem Uplink()
         {
             GameItem gameItem = ItemDirectory.CreateEmptyItem("uplink");
-            ModdedShape(ref gameItem, gameItem.identifier);
+            ModdedShape(ref gameItem, gameItem.identifier + ".png");
             gameItem.SetName("Uplink");
             gameItem.SetValue(300L);
             //gameItem.shortDescription = "Can be used to trade Telecrystals for high-value Syndicate items.";
