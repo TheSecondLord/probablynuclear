@@ -1,23 +1,25 @@
-﻿using Il2Cpp;
-
-namespace ProbablyNuclear
+﻿namespace ProbablyNuclear
 {
     public static class ModCorpos
     {
-        public static void DisplayCorpo(RichTextBuilder builder, string manufacturer)
+        public static void DisplayCorpo(RichTextBuilder builder, GameItem gameItem)
         {
+            if (!gameItem.IsTag("manufacturer"))
+                return;
+            string manufacturer = gameItem.GetTagReadonly("manufacturer").GetString();
+
             if (manufacturer.Equals("interdyne"))
-                builder.AddLine("Interdyne Pharmaceuticals", ignoreEmpty: true, RenderHandler.ColorPalette.Blue, bold: false, italic: false, underline: true);
+                builder.AddLine(ModHelper.GetLocalized("probably_nuclear", "corpo_name_interdyne"), ignoreEmpty: true, RenderHandler.ColorPalette.Blue, bold: false, italic: false, underline: true);
             else if (manufacturer.Equals("gorlex"))
-                builder.AddLine("Gorlex Marauders", ignoreEmpty: true, RenderHandler.ColorPalette.DarkRed, bold: false, italic: false, underline: true);
+                builder.AddLine(ModHelper.GetLocalized("probably_nuclear", "corpo_name_gorlex"), ignoreEmpty: true, RenderHandler.ColorPalette.DarkRed, bold: false, italic: false, underline: true);
             else if (manufacturer.Equals("waffle"))
-                builder.AddLine("Waffle Co.", ignoreEmpty: true, RenderHandler.ColorPalette.DarkOrange, bold: false, italic: false, underline: true);
+                builder.AddLine(ModHelper.GetLocalized("probably_nuclear", "corpo_name_waffle"), ignoreEmpty: true, RenderHandler.ColorPalette.DarkOrange, bold: false, italic: false, underline: true);
             else if (manufacturer.Equals("self"))
-                builder.AddLine("S.E.L.F.", ignoreEmpty: true, RenderHandler.ColorPalette.LightBlue, bold: false, italic: false, underline: true);
+                builder.AddLine(ModHelper.GetLocalized("probably_nuclear", "corpo_name_self"), ignoreEmpty: true, RenderHandler.ColorPalette.LightBlue, bold: false, italic: false, underline: true);
             else if (manufacturer.Equals("donk"))
-                builder.AddLine("Donk Co.", ignoreEmpty: true, RenderHandler.ColorPalette.LightPurple, bold: false, italic: false, underline: true);
+                builder.AddLine(ModHelper.GetLocalized("probably_nuclear", "corpo_name_donk"), ignoreEmpty: true, RenderHandler.ColorPalette.LightPurple, bold: false, italic: false, underline: true);
             else if (manufacturer.Equals("cybersun"))
-                builder.AddLine("Cybersun Industries", ignoreEmpty: true, RenderHandler.ColorPalette.Red, bold: false, italic: false, underline: true);
+                builder.AddLine(ModHelper.GetLocalized("probably_nuclear", "corpo_name_cybersun"), ignoreEmpty: true, RenderHandler.ColorPalette.Red, bold: false, italic: false, underline: true);
         }
     }
 }

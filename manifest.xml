@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <ID>probably_nuclear</ID>
+  <Name>Probably Nuclear</Name>
+  <Author>Lord (TheSecondLord)</Author>
+  <ModVersion>1.0</ModVersion>
+  <Description>Adds items and mechanics based on the Syndicate from SS13/14.</Description>
+  <GameVersions>
+    <Version>046</Version>
+  </GameVersions>
+  <Prerequisites />
+  <!-- Every DLL the game must load, relative to this folder. Nothing else in the folder is loaded. -->
+  <Assemblies>
+    <Assembly>ProbablyNuclear.dll</Assembly>
+  </Assemblies>
+  <!-- What your code does beyond the game's API: files, network, process, dynamic-code, native, reflection-external.
+       Most mods need none. The game scans your DLL when a player activates the mod; an undeclared capability
+       refuses the activation. Check with the console command: mod-scan probably_nuclear   (see ModdingGuide.md) -->
+  <Capabilities />
+</Manifest>

@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
-using Il2Cpp;
-using MelonLoader;
+
 namespace ProbablyNuclear
 {
     [HarmonyPatch(typeof(LockHelper), nameof(LockHelper.CanOpenLock))]

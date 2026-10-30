@@ -1,74 +1,76 @@
 ﻿
-using Il2Cpp;
-
 namespace ProbablyNuclear
 {
     public class ModPreBuiltItems
     {
         public static GameItem LootCrateSyndicate()
         {
-            GameItem gameItem = Items.SyndicateBox();
-            GraphNodeStorage box = new GraphNodeStorage(gameItem.Pointer);
-
+            GameItem gameItem = ModHelper.SpawnItem("syndicate_box");
+            gameItem.ModifyTag("LOOT_CRATE_ID_STRING", delegate (TagState state)
+            {
+                state.Enable().SetString("loot_crate_syndicate");
+            });
+            LotteryHelper.StampSpawnLuck(gameItem);
+            float luck = PreBuiltItemHelper.GetLuckMult(gameItem);
 
             // Guarantee at least 1 high value item
-            if (RNG.Roll(50))
-                GraphUtils.TryAcceptAll(box, Items.HoloparasiteInjector());
+            if (RNG.Roll(50 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("holoparasite_injector"));
             else
-                GraphUtils.TryAcceptAll(box, Items.EnergySword());
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("energy_sword"));
 
             // Pick from 1 large item as to not fill the whole box
-            if (RNG.Roll(30))
-                GraphUtils.TryAcceptAll(box, Items.Cobra());
-            else if (RNG.Roll(50))
-                GraphUtils.TryAcceptAll(box, Items.SyndicateGasMask());
+            if (RNG.Roll(30 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("cobra"));
+            else if (RNG.Roll(50 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("syndicate_gas_mask"));
             else
-                GraphUtils.TryAcceptAll(box, DirectoryMaster.Item("c4"));
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("c4"));
 
-            if (RNG.Roll(40))
-                GraphUtils.TryAcceptAll(box, Items.ThrowingKnife());
-            if (RNG.Roll(40))
-                GraphUtils.TryAcceptAll(box, Items.HyperzineInjector());
-            if (RNG.Roll(25))
-                GraphUtils.TryAcceptAll(box, Items.HyperzineInjector());
-            if (RNG.Roll(15))
-                GraphUtils.TryAcceptAll(box, Items.HyperzineInjector());
-            if (RNG.Roll(40))
-                GraphUtils.TryAcceptAll(box, Items.Implanter());
-            if (RNG.Roll(40))
-                GraphUtils.TryAcceptAll(box,Items.CybersunPen());
-            if (RNG.Roll(90))
-                GraphUtils.TryAcceptAll(box, Items.InterdyneHerbals());
-            if (RNG.Roll(50))
-                GraphUtils.TryAcceptAll(box, Items.Minibomb());
-            if (RNG.Roll(25))
-                GraphUtils.TryAcceptAll(box, Items.Minibomb());
-            if (RNG.Roll(80))
-                GraphUtils.TryAcceptAll(box, Items.SyndicateSoap());
+            if (RNG.Roll(40 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("throwing_knife"));
+            if (RNG.Roll(40 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("hyperzine_injector"));
+            if (RNG.Roll(25 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("hyperzine_injector"));
+            if (RNG.Roll(15 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("hyperzine_injector"));
+            if (RNG.Roll(40 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("implanter"));
+            if (RNG.Roll(40 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("cybersun_pen"));
+            if (RNG.Roll(90 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("interdyne_herbals"));
+            if (RNG.Roll(50 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("minibomb"));
+            if (RNG.Roll(25 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("minibomb"));
+            if (RNG.Roll(80 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("syndicate_soap"));
 
-            GraphUtils.TryAcceptAll(box, Items.Telecrystal());
-            if (RNG.Roll(85))
-                GraphUtils.TryAcceptAll(box, Items.Telecrystal());
-            if (RNG.Roll(60))
-                GraphUtils.TryAcceptAll(box, Items.Telecrystal());
-            if (RNG.Roll(35))
-                GraphUtils.TryAcceptAll(box, Items.Telecrystal());
-            if (RNG.Roll(20))
-                GraphUtils.TryAcceptAll(box, Items.Telecrystal());
-            if (RNG.Roll(5))
-                GraphUtils.TryAcceptAll(box, Items.Telecrystal());
-            if (RNG.Roll(40))
-                GraphUtils.TryAcceptAll(box, DirectoryMaster.Item("smoke_grenade"));
-            if (RNG.Roll(50))
-                GraphUtils.TryAcceptAll(box, DirectoryMaster.Item("heavy_pistol_ammo"));
-            if (RNG.Roll(25))
-                GraphUtils.TryAcceptAll(box, DirectoryMaster.Item("heavy_pistol_ammo"));
-            if (RNG.Roll(40))
-                GraphUtils.TryAcceptAll(box, DirectoryMaster.Item("heavy_pistol_ammo_p"));
-            if (RNG.Roll(15))
-                GraphUtils.TryAcceptAll(box, DirectoryMaster.Item("heavy_pistol_ammo_p"));
-            if (RNG.Roll(60))
-                GraphUtils.TryAcceptAll(box, DirectoryMaster.Item("zyanide_pill"));
+            GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("telecrystal"));
+            if (RNG.Roll(85 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("telecrystal"));
+            if (RNG.Roll(60 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("telecrystal"));
+            if (RNG.Roll(35 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("telecrystal"));
+            if (RNG.Roll(20 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("telecrystal"));
+            if (RNG.Roll(5 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("telecrystal"));
+            if (RNG.Roll(40 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("smoke_grenade"));
+            if (RNG.Roll(50 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("heavy_pistol_ammo"));
+            if (RNG.Roll(25 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("heavy_pistol_ammo"));
+            if (RNG.Roll(40 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("heavy_pistol_ammo_p"));
+            if (RNG.Roll(15 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("heavy_pistol_ammo_p"));
+            if (RNG.Roll(60 * luck))
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("zyanide_pill"));
 
             LockHelper.LockUpContainer(gameItem);
             return gameItem;
@@ -80,11 +82,11 @@ namespace ProbablyNuclear
 
             return rng switch
             {
-                <= 40 => Items.SyndicateSoap(),
-                <= 60 => Items.HyperzineInjector(),
-                <= 75 => Items.InterdyneHerbals(),
-                <= 90 => Items.CybersunPen(),
-                _ => Items.ThrowingKnife(),
+                <= 40 => DirectoryMaster.Item("syndicate_soap"),
+                <= 60 => DirectoryMaster.Item("hyperzine_injector"),
+                <= 75 => DirectoryMaster.Item("interdyne_herbals"),
+                <= 90 => DirectoryMaster.Item("cybersun_pen"),
+                _ => DirectoryMaster.Item("throwing_knife"),
             };
         }
 
@@ -94,12 +96,13 @@ namespace ProbablyNuclear
 
             return rng switch
             {
-                <= 30 => Items.Minibomb(),
-                <= 45 => Items.HyperzineInjector(),
-                <= 53 => Items.CybersunPen(),
-                <= 61 => Items.ThrowingKnife(),
-                <= 80 => Items.SyndicateGasMask(),
-                _ => Items.Implanter()
+                <= 30 => DirectoryMaster.Item("minibomb"),
+                <= 45 => DirectoryMaster.Item("hyperzine_injector"),
+                <= 53 => DirectoryMaster.Item("cybersun_pen"),
+                <= 61 => DirectoryMaster.Item("throwing_knife"),
+                <= 75 => DirectoryMaster.Item("syndicate_gas_mask"),
+                <= 90 => DirectoryMaster.Item("implanter"),
+                _ => DirectoryMaster.Item("suspicious_toolbox"),
             };
         }
 
@@ -109,11 +112,12 @@ namespace ProbablyNuclear
 
             return rng switch
             {
-                <= 15 => Items.Minibomb(),
-                <= 35 => Items.HoloparasiteInjector(),
-                <= 60 => Items.Cobra(),
-                <= 85 => Items.EnergySword(),
-                _ => Items.Emag(),
+                <= 15 => DirectoryMaster.Item("minibomb"),
+                <= 25 => DirectoryMaster.Item("suspicious_toolbox"),
+                <= 45 => DirectoryMaster.Item("holoparasite_injector"),
+                <= 65 => DirectoryMaster.Item("cobra"),
+                <= 85 => DirectoryMaster.Item("energy_sword"),
+                _ => DirectoryMaster.Item("emag"),
             };
         }
     }

@@ -1,5 +1,5 @@
 ﻿using HarmonyLib;
-using Il2Cpp;
+using System;
 
 namespace ProbablyNuclear
 {
@@ -8,7 +8,7 @@ namespace ProbablyNuclear
     {
         static void Postfix(ref StoreClient __result)
         {
-            __result.mainDialogue.nextDialogue.endAction += (Action) delegate
+            __result.mainDialogue.nextDialogue.endAction += () =>
             {
                 if (StoreStation.Instance.dayCounter >= 21 && RNG.Roll(5 + Math.Clamp(StoreReputation.GetBMReputation() / 4, 0, 25)))
                 {
