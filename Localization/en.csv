@@ -36,11 +36,11 @@ item_telecrystal_flavor,It hums with energy and glows a faint red.
 item_throwing_knife_flavor,A lightweight knife with an aerodynamic design and a point sharp enough to pierce armor.
 item_uplink_flavor,An old radio, tuned into the Syndicate Uplink network.
 
+item_cobra_desc,Chambered in custom .22 Caseless ammunition.
 item_cybersun_pen_desc,Functions as a screwdriver.
 item_emag_desc,Opens all locks, no exceptions.
 item_syndicate_box_desc,A locked crate. Painted with the Syndicate logo. Full of supplies. Unlikely to be opened by any standard station keycards.
 item_uplink_desc,Can be used to trade Telecrystals for high-value Syndicate items.
-
 
 corpo_name_interdyne,Interdyne Pharmaceuticals
 corpo_name_gorlex,Gorlex Marauders
@@ -48,7 +48,6 @@ corpo_name_waffle,Waffle Co.
 corpo_name_self,S.E.L.F.
 corpo_name_donk,Donk Co.
 corpo_name_cybersun,Cybersun Industries
-
 
 name_ex_syndicate_agent,Ex-Syndicate Agent
 dialog_ex_syndicate_agent_1,"I don't need these anymore, but I heard that you might."

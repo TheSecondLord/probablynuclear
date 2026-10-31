@@ -6,7 +6,7 @@
   <ModVersion>1.0</ModVersion>
   <Description>Adds items and mechanics based on the Syndicate from SS13/14.</Description>
   <GameVersions>
-    <Version>046</Version>
+    <Version>046D</Version>
   </GameVersions>
   <Prerequisites />
   <!-- Every DLL the game must load, relative to this folder. Nothing else in the folder is loaded. -->

@@ -42,26 +42,28 @@ namespace ProbablyNuclear
             ContrabandHelper.InitContrabandItem(gameItem, 3);
             AudioHelper.InitPistol(gameItem);
 
-            (PixelWindow, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory) tuple = GunModHelper.CreateGunModWindow();
-            PixelWindow item = tuple.Item1;
-            GameSlotInventory item2 = tuple.Item2;
-            GameSlotInventory item3 = tuple.Item3;
-            GameSlotInventory item4 = tuple.Item4;
-            GameSlotInventory item5 = tuple.Item5;
-            GameSlotInventory item6 = tuple.Item6;
-            GameSlotInventory item7 = tuple.Item7;
-            GameSlotInventory item8 = tuple.Rest.Item1;
-            GameSlotInventory item9 = tuple.Rest.Item2;
-            gameItem.SetContentWindow(item);
-            GunHelper.InitGun(gameItem, 15, 5, 15, 55, 40, 15, 22, 100);
-            GunModHelper.EnableStockSlot(item2);
-            GunModHelper.EnableRailSlot(item3);
-            GunModHelper.EnableBarrelSlot(item6);
-            GunModHelper.EnableMagazineSlot(item4, "pistol_reload_light");
-            GunModHelper.EnableUnderbarrelSlot(item5);
-            GunModHelper.EnableSpecialSlot(item7);
-            GunModHelper.EnableSpecialSlot(item8);
-            GunModHelper.EnableSpecialSlot(item9);
+            // Cobra isn't meant to be customisable, but I'm keeping this code here for later
+
+            //(PixelWindow, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory) tuple = GunModHelper.CreateGunModWindow();
+            //PixelWindow item = tuple.Item1;
+            //GameSlotInventory item2 = tuple.Item2;
+            //GameSlotInventory item3 = tuple.Item3;
+            //GameSlotInventory item4 = tuple.Item4;
+            //GameSlotInventory item5 = tuple.Item5;
+            //GameSlotInventory item6 = tuple.Item6;
+            //GameSlotInventory item7 = tuple.Item7;
+            //GameSlotInventory item8 = tuple.Rest.Item1;
+            //GameSlotInventory item9 = tuple.Rest.Item2;
+            //gameItem.SetContentWindow(item);
+            //GunModHelper.EnableStockSlot(item2);
+            //GunModHelper.EnableRailSlot(item3);
+            //GunModHelper.EnableBarrelSlot(item6);
+            //GunModHelper.EnableMagazineSlot(item4, "pistol_reload_light");
+            //GunModHelper.EnableUnderbarrelSlot(item5);
+            //GunModHelper.EnableSpecialSlot(item7);
+            //GunModHelper.EnableSpecialSlot(item8);
+            //GunModHelper.EnableSpecialSlot(item9);
+            GunHelper.InitGun(gameItem, 24, 35, 40, 80, 45, 28, 22, 50, false);
             GunHelper.SetEquipmentCondition(gameItem, ItemFeatureList.EquipmentCondition.New);
 
             return gameItem;
@@ -146,6 +148,7 @@ namespace ProbablyNuclear
             gameItem.SetSpriteAndShapeFromMod("probably_nuclear", gameItem.identifier);
             gameItem.SetName(ModHelper.GetLocalized("probably_nuclear", "item_hyperzine_injector"));
             gameItem.SetGameItemType("MEDICAL");
+            gameItem.SetGameItemType("NARCOTIC");
             gameItem.EnableTag("ITEM_MEDICAL_TAG");
             gameItem.EnableTag("injector");
             gameItem.SetValue(85L);
@@ -281,7 +284,7 @@ namespace ProbablyNuclear
             gameItem.identifier = "syndicate_gas_mask";
             gameItem.SetSpriteAndShapeFromMod("probably_nuclear", gameItem.identifier);
             gameItem.SetName(ModHelper.GetLocalized("probably_nuclear", "item_syndicate_gas_mask"));
-            //gameItem.SetGameItemType("ARMOR");
+            gameItem.SetGameItemType("ARMOR");
             gameItem.SetValue(120L);
             gameItem.flavorText = ModHelper.GetLocalized("probably_nuclear", "item_syndicate_gas_mask_flavor");
             AudioHelper.InitArmour(gameItem);
@@ -325,6 +328,7 @@ namespace ProbablyNuclear
             gameItem.SetName(ModHelper.GetLocalized("probably_nuclear", "item_throwing_knife"));
             gameItem.SetValue(80L);
             gameItem.flavorText = ModHelper.GetLocalized("probably_nuclear", "item_throwing_knife_flavor");
+            gameItem.SetGameItemType("WEAPON");
             AudioHelper.InitBlade(gameItem);
             ContrabandHelper.InitContrabandItem(gameItem, 2);
 
