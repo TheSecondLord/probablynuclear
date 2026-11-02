@@ -347,7 +347,7 @@ namespace ProbablyNuclear
             AudioHelper.InitPlasticMachinery(gameItem);
             ContrabandHelper.InitContrabandItem(gameItem, 3);
 
-            // ModMachines.CreateUplinkMachine(gameItem);
+            ModMachines.CreateUplinkMachine(gameItem);
 
             return gameItem;
         }

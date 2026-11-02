@@ -1,39 +1,54 @@
-﻿namespace ProbablyNuclear
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace ProbablyNuclear
 {
     public class ModMachines
     {
+        private static readonly Dictionary<string, int> UplinkCatalog = new Dictionary<string, int>()
+        {
+            { "cobra", 4 },
+            { "cybersun_pen", 2 },
+            { "emag", 5}
+        };
+
         public static void CreateUplinkMachine(GameItem gameItem)
         {
-            // Todo: redo this with new machine stuff
+            GameGridInventory input = new GameGridInventory(5, 4);
+            GameSlotInventory output = new GameSlotInventory();
+            MachineryButton menu = new MachineryButton("Select Item");
+            MachineryButton confirm = new MachineryButton("Redeem");
+            MachineryText info = MachineryText.Status("Info", "Press 'Redeem' to trade \ntelecrystals for the selected item.");
+            //info.WidthPixelsClamp(50);
+            confirm.SetSize(50);
+            MachineryStack stack = MachineryStack.Vertical(menu,info,confirm);
+            MachineryPanel inputPanel = MachineHelper.Panel("Input", input, "input");
+            MachineryPanel configPanel = MachineHelper.Panel("Configure", stack, "config");
+            MachineryPanel outputPanel = MachineHelper.Panel("Output", output, "output");
 
-            PixelWindow pixelWindow = new PixelWindow(canMove: true);
-            GridPixelElement gridPixelElement = new GridPixelElement(3, 3, isCentered: true);
-            GridPixelElement buttonGridElement = new GridPixelElement(1, 2, isCentered: true);
-            //GameGridInventory gameGridInventory = new GameGridInventory(4, 4);
-            GameGridInventory inputGrid = new GameGridInventory(4, 4);
-            GameSlotInventory outputSlot = new GameSlotInventory();
-            AdvButtonElement selectButton = new AdvButtonElement(null, "Select");
-            AdvButtonElement purchaseButton = new AdvButtonElement(null, "Purchase");
-            //inputGrid.slotPriorityFunc = (GameItem _, GameInventory _, SlotMarker _) => 2;
-            outputSlot.slotPriorityFunc = (GameItem _, GameInventory _, SlotMarker _) => 3;
-            //TagElement element = new TagElement().SetText(LocHelper.GetLocalizedMechani`c("mech_blender_label_module"));
-            TagElement inputLabel = new TagElement().SetText("Input");
-            //TagElement element3 = new TagElement().SetText(LocHelper.GetLocalizedMechanic("mech_blender_label_container"));
-            TagElement selectionLabel = new TagElement().SetText("Selection");
-            TagElement outputLabel = new TagElement().SetText("Output");
-            buttonGridElement.Attach(selectButton, 1, 1);
-            buttonGridElement.Attach(purchaseButton, 1, 2);
+            PixelWindow window = MachineHelper.CreateMachineryWindow(canMove: true, inputPanel, configPanel, outputPanel);
+            gameItem.SetContentWindow(window);
+            
+            PixelWindow menuWindow = CreateMenu();
+            gameItem.SetExamineWindow(menuWindow);
 
-            gridPixelElement.Attach(inputLabel, 1, 0);
-            gridPixelElement.Attach(selectionLabel, 2, 0);
-            gridPixelElement.Attach(outputLabel, 3, 0);
-            gridPixelElement.Attach(inputGrid, 1, 1);
-            gridPixelElement.Attach(buttonGridElement, 2, 1);
-            gridPixelElement.Attach(outputSlot, 3, 1);
+            menuWindow.Center(); // todo fix it uncentering when shown
 
-            pixelWindow.Attach(gridPixelElement);
+            menu.SetCallback(delegate
+            {
+                if (menuWindow.IsVisible() )
+                    menuWindow.Hide();
+                else
+                    menuWindow.Show();
+            });
+        }
 
-            gameItem.SetContentWindow(pixelWindow);
+        public static PixelWindow CreateMenu()
+        {
+            MachineryRadioList menuSelection = new MachineryRadioList(UplinkCatalog.Keys.ToList());
+
+            MachineryPanel menuPanel = MachineHelper.Panel("Selection", menuSelection, "menuSelection");
+            return MachineHelper.CreateMachineryWindow(canMove: true, menuPanel);
         }
     }
 }
