@@ -37,9 +37,9 @@ namespace ProbablyNuclear
             gameItem.SetGameItemType("WEAPON");
             gameItem.SetGameItemType("FIREARM");
             gameItem.SetGameItemType("MIDLINE");
-            gameItem.SetValue(225L);
+            gameItem.SetValue(200L);
             gameItem.EnableManufacturer("waffle");
-            ContrabandHelper.InitContrabandItem(gameItem, 3);
+            ContrabandHelper.InitContrabandItem(gameItem, 2);
             AudioHelper.InitPistol(gameItem);
 
             // Cobra isn't meant to be customisable, but I'm keeping this code here for later
@@ -118,7 +118,7 @@ namespace ProbablyNuclear
             gameItem.SetName(ModHelper.GetLocalized("probably_nuclear", "item_energy_sword"));
             gameItem.SetGameItemType("WEAPON");
             gameItem.SetGameItemType("MELEE_WEAPON");
-            gameItem.SetValue(350L);
+            gameItem.SetValue(320L);
             gameItem.flavorText = ModHelper.GetLocalized("probably_nuclear", "item_energy_sword_flavor");
             gameItem.EnableManufacturer("gorlex");
             ContrabandHelper.InitContrabandItem(gameItem, 3);
@@ -202,7 +202,7 @@ namespace ProbablyNuclear
             gameItem.SetValue(110L);
             gameItem.flavorText = ModHelper.GetLocalized("probably_nuclear", "item_minibomb_flavor");
             AudioHelper.InitGrenade(gameItem);
-            ContrabandHelper.InitContrabandItem(gameItem, 3);
+            ContrabandHelper.InitContrabandItem(gameItem, 2);
 
             return gameItem;
         }
@@ -313,7 +313,7 @@ namespace ProbablyNuclear
             GameItem gameItem = ItemDirectory.CreateEmptyItem("telecrystal");
             gameItem.SetSpriteAndShapeFromMod("probably_nuclear", gameItem.identifier);
             gameItem.SetName(ModHelper.GetLocalized("probably_nuclear", "item_telecrystal"));
-            gameItem.SetValue(25L);
+            gameItem.SetValue(20L);
             gameItem.flavorText = ModHelper.GetLocalized("probably_nuclear", "item_telecrystal_flavor");
             AudioHelper.InitGunMod(gameItem);
             ContrabandHelper.InitContrabandItem(gameItem, 2);
