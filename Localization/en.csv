@@ -42,6 +42,24 @@ item_emag_desc,Opens all locks, no exceptions.
 item_syndicate_box_desc,A locked crate. Painted with the Syndicate logo. Full of supplies. Unlikely to be opened by any standard station keycards.
 item_uplink_desc,Can be used to trade Telecrystals for high-value Syndicate items.
 
+string_info,Info
+string_warning,Warning
+string_success,Success
+string_input,Input
+string_output,Output
+string_configure,Configure
+string_select_item,Select Item
+
+machine_uplink_info,\nOpen the uplink catalog to\nselect an item to trade for.
+machine_uplink_info_full,\nCouldn't redeem item:\nremove previous item first.
+machine_uplink_info_insufficient,\nCouldn't redeem item:\ninsufficient Telecrystals.
+machine_uplink_info_success,\nSuccessfully redeemed\n{0}.
+machine_uplink_category_weapons,Weapons
+machine_uplink_category_tools,Tools
+machine_uplink_category_medical,Medical
+machine_uplink_category_other,Other
+machine_uplink_redeem_button,{0} - {1}TC
+
 corpo_name_interdyne,Interdyne Pharmaceuticals
 corpo_name_gorlex,Gorlex Marauders
 corpo_name_waffle,Waffle Co.

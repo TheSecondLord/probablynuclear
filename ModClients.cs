@@ -19,14 +19,14 @@ namespace ProbablyNuclear
         {
             StoreClient storeClient = new StoreClient();
             storeClient.identifier = "ex_syndicate_agent";
-            storeClient.displayName = ModHelper.GetLocalized("probably_nuclear", "name_ex_syndicate_agent");
+            storeClient.displayName = ModLoc.Localize("name_ex_syndicate_agent");
             storeClient.clientFaction = "FACTION_BLACK_MARKET";
             storeClient.spriteName = SpriteDict.GetRandomMercSpriteName();
             storeClient.clientIntent = StoreClient.ClientIntent.SELL;
             storeClient.mainDialogue
-                .SetText(storeClient.displayName, ModHelper.GetLocalized("probably_nuclear", "dialog_ex_syndicate_agent_1"))
+                .SetText(storeClient.displayName, ModLoc.Localize("dialog_ex_syndicate_agent_1"))
                 .NextDialogue()
-                .SetText(storeClient.displayName, ModHelper.GetLocalized("probably_nuclear", "dialog_ex_syndicate_agent_2"))
+                .SetText(storeClient.displayName, ModLoc.Localize("dialog_ex_syndicate_agent_2"))
                 .SetEndAction(delegate
                 {
                     PlayerStore.Instance.AddDirectSellingItemToTable(DirectoryMaster.Item("uplink"));
