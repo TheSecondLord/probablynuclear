@@ -1,5 +1,6 @@
 item_cobra,Cobra
 item_cybersun_pen,Cybersun Pen
+item_c20r,C20-R
 item_emag,EMAG
 item_energy_sword,Energy Sword
 item_holoparasite_injector,Holoparasite Injector
@@ -19,6 +20,7 @@ item_uplink,Uplink
 
 item_cobra_flavor,A silenced pistol designed for stealthy assassinations.
 item_cybersun_pen_flavor,Uses advanced technology and a hardlight tip to erase ink and forge documents.
+item_c20r_flavor,One of the Syndicate's many weapons of war, this compact SMG is rumored to be used by elite Syndicate operatives.
 item_emag_flavor,The Syndicate's iconic EMAG, created from a hacked ID card.
 item_energy_sword_flavor,An iconic weapon wielded by countless Syndicate operatives. Activating it would certainly attract unwanted attention.
 item_holoparasite_injector_flavor,The pride and joy of Cybersun. Embeds a bioengineered parasite below the skin capable of manifesting a hardlight guardian to defend its host.
@@ -38,6 +40,7 @@ item_uplink_flavor,An old radio, tuned into the Syndicate Uplink network.
 
 item_cobra_desc,Chambered in custom .22 Caseless ammunition.
 item_cybersun_pen_desc,Functions as a screwdriver.
+item_c20r_desc,Chambered in .22 ammunition. Only compatible with .22 SMG magazines.
 item_emag_desc,Opens all locks, no exceptions.
 item_syndicate_box_desc,A locked crate. Painted with the Syndicate logo. Full of supplies. Unlikely to be opened by any standard station keycards.
 item_uplink_desc,Can be used to trade Telecrystals for high-value Syndicate items.

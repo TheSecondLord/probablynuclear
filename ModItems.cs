@@ -6,6 +6,7 @@ namespace ProbablyNuclear
         {
             modItemDirectory.Add("cobra", Cobra);
             modItemDirectory.Add("cybersun_pen", CybersunPen);
+            modItemDirectory.Add("c20r", C20r);
             modItemDirectory.Add("emag", Emag);
             modItemDirectory.Add("energy_sword", EnergySword);
             modItemDirectory.Add("holoparasite_injector", HoloparasiteInjector);
@@ -33,7 +34,6 @@ namespace ProbablyNuclear
             gameItem.SetName(ModLoc.Localize("item_cobra"));
             gameItem.shortDescription = ModLoc.Localize("item_cobra_desc");
             gameItem.flavorText = ModLoc.Localize("item_cobra_flavor");
-            gameItem.EnableManufacturer("spacer");
             gameItem.SetGameItemType("WEAPON");
             gameItem.SetGameItemType("FIREARM");
             gameItem.SetGameItemType("MIDLINE");
@@ -42,27 +42,6 @@ namespace ProbablyNuclear
             ContrabandHelper.InitContrabandItem(gameItem, 2);
             AudioHelper.InitPistol(gameItem);
 
-            // Cobra isn't meant to be customisable, but I'm keeping this code here for later
-
-            //(PixelWindow, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory) tuple = GunModHelper.CreateGunModWindow();
-            //PixelWindow item = tuple.Item1;
-            //GameSlotInventory item2 = tuple.Item2;
-            //GameSlotInventory item3 = tuple.Item3;
-            //GameSlotInventory item4 = tuple.Item4;
-            //GameSlotInventory item5 = tuple.Item5;
-            //GameSlotInventory item6 = tuple.Item6;
-            //GameSlotInventory item7 = tuple.Item7;
-            //GameSlotInventory item8 = tuple.Rest.Item1;
-            //GameSlotInventory item9 = tuple.Rest.Item2;
-            //gameItem.SetContentWindow(item);
-            //GunModHelper.EnableStockSlot(item2);
-            //GunModHelper.EnableRailSlot(item3);
-            //GunModHelper.EnableBarrelSlot(item6);
-            //GunModHelper.EnableMagazineSlot(item4, "pistol_reload_light");
-            //GunModHelper.EnableUnderbarrelSlot(item5);
-            //GunModHelper.EnableSpecialSlot(item7);
-            //GunModHelper.EnableSpecialSlot(item8);
-            //GunModHelper.EnableSpecialSlot(item9);
             GunHelper.InitGun(gameItem, 24, 35, 40, 80, 45, 28, 22, 50, false);
             GunHelper.SetEquipmentCondition(gameItem, ItemFeatureList.EquipmentCondition.New);
 
@@ -82,6 +61,46 @@ namespace ProbablyNuclear
             gameItem.flavorText = ModLoc.Localize("item_cybersun_pen_flavor");
             gameItem.EnableManufacturer("cybersun");
             ContrabandHelper.InitContrabandItem(gameItem, 2);
+
+            return gameItem;
+        }
+
+        public static GameItem C20r()
+        {
+            GameItem gameItem = ItemDirectory.CreateEmptyItem("c20r");
+            gameItem.SetSpriteAndShapeFromMod("probably_nuclear", gameItem.identifier);
+            gameItem.SetName(ModLoc.Localize("item_c20r"));
+            gameItem.shortDescription = ModLoc.Localize("item_c20r_desc");
+            gameItem.flavorText = ModLoc.Localize("item_c20r_flavor");
+            gameItem.SetGameItemType("WEAPON");
+            gameItem.SetGameItemType("FIREARM");
+            gameItem.SetGameItemType("MIDLINE");
+            gameItem.SetValue(300L);
+            gameItem.EnableManufacturer("waffle");
+            ContrabandHelper.InitContrabandItem(gameItem, 3);
+            AudioHelper.InitHeavyGun(gameItem);
+
+            (PixelWindow, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory, GameSlotInventory) tuple = GunModHelper.CreateGunModWindow();
+            PixelWindow item = tuple.Item1;
+            GameSlotInventory item2 = tuple.Item2;
+            GameSlotInventory item3 = tuple.Item3;
+            GameSlotInventory item4 = tuple.Item4;
+            GameSlotInventory item5 = tuple.Item5;
+            GameSlotInventory item6 = tuple.Item6;
+            GameSlotInventory item7 = tuple.Item7;
+            GameSlotInventory item8 = tuple.Rest.Item1;
+            GameSlotInventory item9 = tuple.Rest.Item2;
+            gameItem.SetContentWindow(item);
+            GunModHelper.EnableStockSlot(item2);
+            GunModHelper.EnableRailSlot(item3);
+            GunModHelper.EnableBarrelSlot(item6);
+            GunModHelper.EnableMagazineSlot(item4, "smg_reload");
+            GunModHelper.EnableUnderbarrelSlot(item5);
+            GunModHelper.EnableSpecialSlot(item7);
+            GunModHelper.EnableSpecialSlot(item8);
+            GunModHelper.EnableSpecialSlot(item9);
+            GunHelper.InitGun(gameItem, 65, 55, 65, 25, 60, 50, 10, 40);
+            GunHelper.SetEquipmentCondition(gameItem, ItemFeatureList.EquipmentCondition.Good);
 
             return gameItem;
         }
