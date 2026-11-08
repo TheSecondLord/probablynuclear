@@ -164,67 +164,71 @@ namespace ProbablyNuclear
         }
     }
 
-    [HarmonyPatch(typeof(GunModDirectory), "CreateBipod")]
-    public static class GunModPatchBipod
-    {
-        static void Postfix(ref GameItem __result)
-        {
-            __result.parentItemShapeModifierForItemFunc = AddGunMod.AddBipodShape;
-            __result.parentItemSpriteModifierForItemFunc = AddGunMod.AddBipodSprite;
-            GunModHelper.AllowOnlyWeapon(["smg", "c20r"], __result);
-        }
-    }
+    // These can technically be supported, but
+    // a) It would break compat with other mods because it's overwriting instead of adding and
+    // b) It looks bad because the c20 doesn't really have any underbarrel space.
 
-    [HarmonyPatch(typeof(GunModDirectory), "CreateGL")]
-    public static class GunModPatchGL
-    {
-        static void Postfix(ref GameItem __result)
-        {
-            __result.parentItemShapeModifierForItemFunc = AddGunMod.AddGLShape;
-            __result.parentItemSpriteModifierForItemFunc = AddGunMod.AddGLSprite;
-            GunModHelper.AllowOnlyWeapon(["smg", "c20r"], __result);
-        }
-    }
+    //[HarmonyPatch(typeof(GunModDirectory), "CreateBipod")]
+    //public static class GunModPatchBipod
+    //{
+    //    static void Postfix(ref GameItem __result)
+    //    {
+    //        __result.parentItemShapeModifierForItemFunc = AddGunMod.AddBipodShape;
+    //        __result.parentItemSpriteModifierForItemFunc = AddGunMod.AddBipodSprite;
+    //        GunModHelper.AllowOnlyWeapon(["smg", "c20r"], __result);
+    //    }
+    //}
 
-    // For the few methods that are defined as lambdas for some reason
-    static class AddGunMod
-    {
-        public static GridShapeBuilder AddBipodShape(GameItem item, GameInventory inventory, SlotMarker a, GridShape b, TagSystem c, GameItem parent)
-        {
-            if (parent.IsID("smg"))
-                return new GridShapeBuilder().SetDataFill(item.modifiedShape.width, item.modifiedShape.height, 1).SetTransform(3, 2, flipped: false, 0);
-            else if (parent.IsID("c20r"))
-                return new GridShapeBuilder().SetDataFill(item.modifiedShape.width, item.modifiedShape.height, 1).SetTransform(3, 3, flipped: false, 0);
-            return null;
-        }
+    //[HarmonyPatch(typeof(GunModDirectory), "CreateGL")]
+    //public static class GunModPatchGL
+    //{
+    //    static void Postfix(ref GameItem __result)
+    //    {
+    //        __result.parentItemShapeModifierForItemFunc = AddGunMod.AddGLShape;
+    //        __result.parentItemSpriteModifierForItemFunc = AddGunMod.AddGLSprite;
+    //        GunModHelper.AllowOnlyWeapon(["smg", "c20r"], __result);
+    //    }
+    //}
 
-        public static List<ItemSpriteModifier> AddBipodSprite(GameItem item, GameInventory inventory, SlotMarker a, GridShape b, TagSystem c, GameItem parent)
-        {
-            List<ItemSpriteModifier> list = new List<ItemSpriteModifier>();
-            if (parent.IsID("smg"))
-                list.Add(new ItemSpriteModifier(RenderHandler.LoadFromAtlas("Items/items_mod", "bipod_view"), new Vector2(58f, -17f)));
-            else if (parent.IsID("c20r"))
-                list.Add(new ItemSpriteModifier(RenderHandler.LoadFromAtlas("Items/items_mod", "bipod_view"), new Vector2(45f, -25f)));
-            return list;
-        }
+    //// For the few methods that are defined as lambdas for some reason
+    //static class AddGunMod
+    //{
+    //    public static GridShapeBuilder AddBipodShape(GameItem item, GameInventory inventory, SlotMarker a, GridShape b, TagSystem c, GameItem parent)
+    //    {
+    //        if (parent.IsID("smg"))
+    //            return new GridShapeBuilder().SetDataFill(item.modifiedShape.width, item.modifiedShape.height, 1).SetTransform(3, 2, flipped: false, 0);
+    //        else if (parent.IsID("c20r"))
+    //            return new GridShapeBuilder().SetDataFill(item.modifiedShape.width, item.modifiedShape.height, 1).SetTransform(3, 3, flipped: false, 0);
+    //        return null;
+    //    }
 
-        public static GridShapeBuilder AddGLShape(GameItem item, GameInventory inventory, SlotMarker a, GridShape b, TagSystem c, GameItem parent)
-        {
-            if (parent.IsID("smg"))
-                return new GridShapeBuilder().SetDataFill(item.modifiedShape.width, item.modifiedShape.height, 1).SetTransform(3, 2, flipped: false, 0);
-            else if (parent.IsID("c20r"))
-                return new GridShapeBuilder().SetDataFill(item.modifiedShape.width, item.modifiedShape.height, 1).SetTransform(3, 3, flipped: false, 0);
-            return null;
-        }
+    //    public static List<ItemSpriteModifier> AddBipodSprite(GameItem item, GameInventory inventory, SlotMarker a, GridShape b, TagSystem c, GameItem parent)
+    //    {
+    //        List<ItemSpriteModifier> list = new List<ItemSpriteModifier>();
+    //        if (parent.IsID("smg"))
+    //            list.Add(new ItemSpriteModifier(RenderHandler.LoadFromAtlas("Items/items_mod", "bipod_view"), new Vector2(58f, -17f)));
+    //        else if (parent.IsID("c20r"))
+    //            list.Add(new ItemSpriteModifier(RenderHandler.LoadFromAtlas("Items/items_mod", "bipod_view"), new Vector2(45f, -25f)));
+    //        return list;
+    //    }
 
-        public static List<ItemSpriteModifier> AddGLSprite(GameItem item, GameInventory inventory, SlotMarker a, GridShape b, TagSystem c, GameItem parent)
-        {
-            List<ItemSpriteModifier> list = new List<ItemSpriteModifier>();
-            if (parent.IsID("smg"))
-                list.Add(new ItemSpriteModifier(RenderHandler.LoadFromAtlas("Items/items_mod", "gl_view"), new Vector2(54f, -17f)));
-            else if (parent.IsID("c20r"))
-                list.Add(new ItemSpriteModifier(RenderHandler.LoadFromAtlas("Items/items_mod", "gl_view"), new Vector2(44f, -22f)));
-            return list;
-        }
-    }
+    //    public static GridShapeBuilder AddGLShape(GameItem item, GameInventory inventory, SlotMarker a, GridShape b, TagSystem c, GameItem parent)
+    //    {
+    //        if (parent.IsID("smg"))
+    //            return new GridShapeBuilder().SetDataFill(item.modifiedShape.width, item.modifiedShape.height, 1).SetTransform(3, 2, flipped: false, 0);
+    //        else if (parent.IsID("c20r"))
+    //            return new GridShapeBuilder().SetDataFill(item.modifiedShape.width, item.modifiedShape.height, 1).SetTransform(3, 3, flipped: false, 0);
+    //        return null;
+    //    }
+
+    //    public static List<ItemSpriteModifier> AddGLSprite(GameItem item, GameInventory inventory, SlotMarker a, GridShape b, TagSystem c, GameItem parent)
+    //    {
+    //        List<ItemSpriteModifier> list = new List<ItemSpriteModifier>();
+    //        if (parent.IsID("smg"))
+    //            list.Add(new ItemSpriteModifier(RenderHandler.LoadFromAtlas("Items/items_mod", "gl_view"), new Vector2(54f, -17f)));
+    //        else if (parent.IsID("c20r"))
+    //            list.Add(new ItemSpriteModifier(RenderHandler.LoadFromAtlas("Items/items_mod", "gl_view"), new Vector2(44f, -22f)));
+    //        return list;
+    //    }
+    //}
 }

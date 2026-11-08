@@ -7,6 +7,7 @@ item_holoparasite_injector,Holoparasite Injector
 item_hyperzine_injector,Hyperzine Injector
 item_implanter,Implanter
 item_interdyne_herbals,Interdyne Herbals
+item_light_pistol_ammo_caseless,.22 SR Ammunition (Caseless)
 item_minibomb,Minibomb
 item_nuke_disk,Nuclear Authentication Disk
 item_suspicious_toolbox,Suspicious Toolbox
@@ -17,6 +18,7 @@ item_syndicate_soap,Syndicate Soap
 item_telecrystal,Telecrystal
 item_throwing_knife,Throwing Knife
 item_uplink,Uplink
+item_22mm_mag_smg,22mm SMG Magazine
 
 item_cobra_flavor,A silenced pistol designed for stealthy assassinations.
 item_cybersun_pen_flavor,Uses advanced technology and a hardlight tip to erase ink and forge documents.
@@ -27,6 +29,7 @@ item_holoparasite_injector_flavor,The pride and joy of Cybersun. Embeds a bioeng
 item_hyperzine_injector_flavor,A powerful mixture of combat stimulants produces by Interdyne. Far more potent than Oxymore.
 item_implanter_flavor,Contains one of the Syndicate's wide range of subdermal implants.
 item_interdyne_herbals_flavor,Medicine-laced cigarettes, for agents who need to recover from fights and look cool doing so.
+item_light_pistol_ammo_caseless_flavor,A handful of .22 Caseless ammo. Made for use with the Cobra, it leaves no casings behind when fired.
 item_minibomb_flavor,An easily concealed grenade which creates a short-ranged yet devastatingly powerful explosion.
 item_nuke_disk_flavor,Are you sure that whatever you're doing is really worth it?
 item_suspicious_toolbox_flavor,Designed both for holding tools and for violently swinging at people's heads.
@@ -38,6 +41,7 @@ item_telecrystal_flavor,It hums with energy and glows a faint red.
 item_throwing_knife_flavor,A lightweight knife with an aerodynamic design and a point sharp enough to pierce armor.
 item_uplink_flavor,An old radio, tuned into the Syndicate Uplink network.
 
+item_22mm_mag_smg_desc,Holds 35 rounds of .22mm pistol ammunition. Created for use with the C-20R.
 item_cobra_desc,Chambered in custom .22 Caseless ammunition.
 item_cybersun_pen_desc,Functions as a screwdriver.
 item_c20r_desc,Chambered in .22 ammunition. Only compatible with .22 SMG magazines.
@@ -58,10 +62,12 @@ machine_uplink_info_full,\nCouldn't redeem item:\nremove previous item first.
 machine_uplink_info_insufficient,\nCouldn't redeem item:\ninsufficient Telecrystals.
 machine_uplink_info_success,\nSuccessfully redeemed\n{0}.
 machine_uplink_category_weapons,Weapons
+machine_uplink_category_guns,Guns
 machine_uplink_category_tools,Tools
 machine_uplink_category_medical,Medical
 machine_uplink_category_other,Other
 machine_uplink_redeem_button,{0} - {1}TC
+machine_uplink_alt_name_ammo_caseless,.22 Caseless Ammo
 
 corpo_name_interdyne,Interdyne Pharmaceuticals
 corpo_name_gorlex,Gorlex Marauders
@@ -73,3 +79,4 @@ corpo_name_cybersun,Cybersun Industries
 name_ex_syndicate_agent,Ex-Syndicate Agent
 dialog_ex_syndicate_agent_1,"I don't need these anymore, but I heard that you might."
 dialog_ex_syndicate_agent_2,"Don't let it fall into the wrong hands. They'll know if you do."
+dialogue_ammo_caseless,.22 Caseless

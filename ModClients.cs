@@ -30,39 +30,35 @@ namespace ProbablyNuclear
                 .SetEndAction(delegate
                 {
                     PlayerStore.Instance.AddDirectSellingItemToTable(DirectoryMaster.Item("uplink"));
-                    if (RNG.Roll(50))
-                        PlayerStore.Instance.AddDirectSellingItemToTable(DirectoryMaster.Item("emag"));
 
-                    // 1 to 6 TC, lower rolls favoured
+                    // 3 to 9 TC, lower rolls favoured
                     PlayerStore.Instance.AddDirectSellingItemToTable(DirectoryMaster.Item("telecrystal"));
+                    PlayerStore.Instance.AddDirectSellingItemToTable(DirectoryMaster.Item("telecrystal"));
+                    PlayerStore.Instance.AddDirectSellingItemToTable(DirectoryMaster.Item("telecrystal"));
+                    if (RNG.Roll(60))
+                        PlayerStore.Instance.AddDirectSellingItemToTable(DirectoryMaster.Item("telecrystal"));
                     if (RNG.Roll(50))
                         PlayerStore.Instance.AddDirectSellingItemToTable(DirectoryMaster.Item("telecrystal"));
-                    if (RNG.Roll(33))
+                    if (RNG.Roll(30))
                         PlayerStore.Instance.AddDirectSellingItemToTable(DirectoryMaster.Item("telecrystal"));
-                    if (RNG.Roll(25))
+                    if (RNG.Roll(20))
                         PlayerStore.Instance.AddDirectSellingItemToTable(DirectoryMaster.Item("telecrystal"));
-                    if (RNG.Roll(15))
+                    if (RNG.Roll(10))
                         PlayerStore.Instance.AddDirectSellingItemToTable(DirectoryMaster.Item("telecrystal"));
-                    if (RNG.Roll(8))
+                    if (RNG.Roll(5))
                         PlayerStore.Instance.AddDirectSellingItemToTable(DirectoryMaster.Item("telecrystal"));
 
                     // 1 to 3 low-level loot
                     PlayerStore.Instance.AddDirectSellingItemToTable(ModPreBuiltItems.SyndicateLootLow());
-                    if (RNG.Roll(66))
-                        PlayerStore.Instance.AddDirectSellingItemToTable(ModPreBuiltItems.SyndicateLootLow());
-                    if (RNG.Roll(33))
-                        PlayerStore.Instance.AddDirectSellingItemToTable(ModPreBuiltItems.SyndicateLootLow());
-
-                    // 1 to 3 mid-level loot, lower rolls favoured
-                    PlayerStore.Instance.AddDirectSellingItemToTable(ModPreBuiltItems.SyndicateLootMid());
                     if (RNG.Roll(50))
-                        PlayerStore.Instance.AddDirectSellingItemToTable(ModPreBuiltItems.SyndicateLootMid());
-                    if (RNG.Roll(20))
-                        PlayerStore.Instance.AddDirectSellingItemToTable(ModPreBuiltItems.SyndicateLootMid());
+                        PlayerStore.Instance.AddDirectSellingItemToTable(ModPreBuiltItems.SyndicateLootLow());
+                    if (RNG.Roll(25))
+                        PlayerStore.Instance.AddDirectSellingItemToTable(ModPreBuiltItems.SyndicateLootLow());
 
-                    // 20% change high-level loot
+                    // 0 to 1 mid-level loot, lower rolls favoured
+                    PlayerStore.Instance.AddDirectSellingItemToTable(ModPreBuiltItems.SyndicateLootMid());
                     if (RNG.Roll(20))
-                        PlayerStore.Instance.AddDirectSellingItemToTable(ModPreBuiltItems.SyndicateLootHigh());
+                        PlayerStore.Instance.AddDirectSellingItemToTable(ModPreBuiltItems.SyndicateLootMid());
                 });
 
             storeClient.AddBasicDialog();

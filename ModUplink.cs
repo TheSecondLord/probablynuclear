@@ -8,14 +8,21 @@ namespace ProbablyNuclear
         private static readonly Dictionary<string, int> UplinkWeapons = new Dictionary<string, int>()
         {
             { "throwing_knife", 3 },
-            { "minibomb", 5 },
-            { "cobra", 12 },
-            { "energy_sword", 16 }
+            { "minibomb", 4 },
+            { "energy_sword", 15 }
+        };
+
+        private static readonly Dictionary<string, int> UplinkGuns = new Dictionary<string, int>()
+        {
+            { "light_pistol_ammo_caseless", 1 },
+            { "22mm_mag_smg", 2 },
+            { "cobra", 10 },
+            { "c20r", 18 }
         };
 
         private static readonly Dictionary<string, int> UplinkTools = new Dictionary<string, int>()
         {
-            { "cybersun_pen", 4 },
+            { "cybersun_pen", 3 },
             { "syndicate_gas_mask", 5},
             { "emag", 8},
             { "suspicious_toolbox", 8}
@@ -23,20 +30,21 @@ namespace ProbablyNuclear
 
         private static readonly Dictionary<string, int> UplinkMedical = new Dictionary<string, int>()
         {
-            { "hyperzine_injector", 4 },
+            { "hyperzine_injector", 3 },
             { "implanter", 7 },
-            { "holoparasite_injector", 15 }
+            { "holoparasite_injector", 16 }
         };
 
         private static readonly Dictionary<string, int> UplinkOther = new Dictionary<string, int>()
         {
             { "syndicate_soap", 1 },
-            { "interdyne_herbals", 3 }
+            { "interdyne_herbals", 2 }
         };
 
         private static readonly Dictionary<string, Dictionary<string, int>> UplinkCatalog = new()
         {
             { "weapons", UplinkWeapons },
+            { "guns", UplinkGuns },
             { "tools", UplinkTools },
             { "medical", UplinkMedical },
             { "other", UplinkOther }
@@ -73,7 +81,10 @@ namespace ProbablyNuclear
                     if (menuWindow.rectTransform.parent != window.rectTransform)
                         menuWindow.rectTransform.SetParent(window.rectTransform, worldPositionStays: true);
 
-                    menuWindow.rectTransform.anchoredPosition = new Vector2(-80, -110);
+                    (float x, float y) = window.Size();
+                    (float x2, float y2) = menuWindow.Size();
+                    //menuWindow.rectTransform.anchoredPosition = new Vector2(-80, -110);
+                    menuWindow.rectTransform.anchoredPosition = new Vector2(-(x2 / 2) + x / 2, -y);
 
                 }
             });
@@ -100,7 +111,11 @@ namespace ProbablyNuclear
                 Dictionary<string, int> entries = UplinkCatalog[category];
                 foreach (string entry in entries.Keys)
                 {
-                    string text = ModLoc.Localize("machine_uplink_redeem_button", ModLoc.Localize("item_" + entry), entries[entry]);
+                    string text;
+                    if (entry == "light_pistol_ammo_caseless") // Needs a shorter name replacement to not extend past the button UI
+                        text = ModLoc.Localize("machine_uplink_redeem_button", ModLoc.Localize("machine_uplink_alt_name_ammo_caseless"), entries[entry]);
+                    else
+                        text = ModLoc.Localize("machine_uplink_redeem_button", ModLoc.Localize("item_" + entry), entries[entry]);
                     MachineryButton button = new MachineryButton(text, delegate { Redeem(entry, entries[entry]); }, width: 100);
                     categoryStack.Add(button);
 
@@ -122,7 +137,6 @@ namespace ProbablyNuclear
             List<GameItem> tc = GraphUtils.FindAllChildrenType(input, (GameItem item) => item.identifier == "telecrystal");
             if (tc.Count < cost)
             {
-                //info.SetText(ModLoc.Localize("machine_uplink_info_insufficient"));
                 info.SetStatus(ModLoc.Localize("string_warning"), ModLoc.Localize("machine_uplink_info_insufficient"));
                 return;
             }

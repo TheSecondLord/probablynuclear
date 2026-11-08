@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ProbablyNuclear
 {
     public class ModItems
@@ -13,6 +16,7 @@ namespace ProbablyNuclear
             modItemDirectory.Add("hyperzine_injector", HyperzineInjector);
             modItemDirectory.Add("implanter", Implanter);
             modItemDirectory.Add("interdyne_herbals", InterdyneHerbals);
+            modItemDirectory.Add("light_pistol_ammo_caseless", LightPistolAmmoCaseless);
             modItemDirectory.Add("minibomb", Minibomb);
             modItemDirectory.Add("nuke_disk", NukeDisk);
             modItemDirectory.Add("suspicious_toolbox", SuspiciousToolbox);
@@ -23,6 +27,7 @@ namespace ProbablyNuclear
             modItemDirectory.Add("telecrystal", Telecrystal);
             modItemDirectory.Add("throwing_knife", ThrowingKnife);
             modItemDirectory.Add("uplink", Uplink);
+            modItemDirectory.Add("22mm_mag_smg", MagSmg);
 
             PreBuiltItemHelper.preBuiltItems.Add("loot_crate_syndicate", ModPreBuiltItems.LootCrateSyndicate);
         }
@@ -42,8 +47,8 @@ namespace ProbablyNuclear
             ContrabandHelper.InitContrabandItem(gameItem, 2);
             AudioHelper.InitPistol(gameItem);
 
-            GunHelper.InitGun(gameItem, 24, 35, 40, 80, 45, 28, 22, 50, false);
-            GunHelper.SetEquipmentCondition(gameItem, ItemFeatureList.EquipmentCondition.New);
+            GunHelper.InitGun(gameItem, 28, 45, 40, 80, 55, 75, 220, 20, false);
+            GunHelper.SetEquipmentCondition(gameItem, ItemFeatureList.EquipmentCondition.Good);
 
             return gameItem;
         }
@@ -99,7 +104,7 @@ namespace ProbablyNuclear
             GunModHelper.EnableSpecialSlot(item7);
             GunModHelper.EnableSpecialSlot(item8);
             GunModHelper.EnableSpecialSlot(item9);
-            GunHelper.InitGun(gameItem, 65, 55, 65, 25, 60, 50, 10, 40);
+            GunHelper.InitGun(gameItem, 50, 40, 85, 25, 30, 60, 22, 20);
             GunHelper.SetEquipmentCondition(gameItem, ItemFeatureList.EquipmentCondition.Good);
 
             return gameItem;
@@ -137,7 +142,7 @@ namespace ProbablyNuclear
             gameItem.SetName(ModLoc.Localize("item_energy_sword"));
             gameItem.SetGameItemType("WEAPON");
             gameItem.SetGameItemType("MELEE_WEAPON");
-            gameItem.SetValue(320L);
+            gameItem.SetValue(280L);
             gameItem.flavorText = ModLoc.Localize("item_energy_sword_flavor");
             gameItem.EnableManufacturer("gorlex");
             ContrabandHelper.InitContrabandItem(gameItem, 3);
@@ -153,7 +158,7 @@ namespace ProbablyNuclear
             gameItem.SetGameItemType("WEAPON");
             gameItem.SetGameItemType("MEDICAL");
             gameItem.EnableTag("ITEM_MEDICAL_TAG");
-            gameItem.SetValue(320L);
+            gameItem.SetValue(280L);
             gameItem.flavorText = ModLoc.Localize("item_holoparasite_injector_flavor");
             gameItem.EnableManufacturer("cybersun");
             ContrabandHelper.InitContrabandItem(gameItem, 3);
@@ -170,7 +175,7 @@ namespace ProbablyNuclear
             gameItem.SetGameItemType("NARCOTIC");
             gameItem.EnableTag("ITEM_MEDICAL_TAG");
             gameItem.EnableTag("injector");
-            gameItem.SetValue(85L);
+            gameItem.SetValue(70L);
             gameItem.flavorText = ModLoc.Localize("item_hyperzine_injector_flavor");
             gameItem.EnableManufacturer("interdyne");
             AudioHelper.InitInjectorAudio(gameItem);
@@ -186,7 +191,7 @@ namespace ProbablyNuclear
             gameItem.SetName(ModLoc.Localize("item_implanter"));
             gameItem.SetGameItemType("MEDICAL");
             gameItem.EnableTag("ITEM_MEDICAL_TAG");
-            gameItem.SetValue(160L);
+            gameItem.SetValue(150L);
             gameItem.flavorText = ModLoc.Localize("item_implanter_flavor");
             gameItem.EnableManufacturer("cybersun");
             AudioHelper.InitInjectorAudio(gameItem);
@@ -211,6 +216,29 @@ namespace ProbablyNuclear
             return gameItem;
         }
 
+        public static GameItem LightPistolAmmoCaseless()
+        {
+            GameItem gameItem = ItemDirectory.CreateEmptyItem("light_pistol_ammo_caseless");
+            gameItem.SetSpriteAndShapeFromMod("probably_nuclear", gameItem.identifier);
+            gameItem.SetName(ModLoc.Localize("item_light_pistol_ammo_caseless"));
+            gameItem.SetGameItemType("AMMUNITION");
+            gameItem.SetValue(24L);
+            gameItem.flavorText = ModLoc.Localize("item_light_pistol_ammo_caseless_flavor");
+            gameItem.EnableManufacturer("waffle");
+            ContrabandHelper.InitContrabandItem(gameItem, 2);
+
+            gameItem.ModifyTag("GUN_CALIBER_TAG", delegate (TagState state)
+            {
+                state.Enable().SetInt(220); // Calibre has to be an int so 220 is caseless I guess
+            });
+            gameItem.ModifyTag("AMMO_TYPE_TAG", delegate (TagState state)
+            {
+                state.Enable().SetString("NORMAL_AMMO");
+            });
+
+            return gameItem;
+        }
+
         public static GameItem Minibomb()
         {
             GameItem gameItem = ItemDirectory.CreateEmptyItem("minibomb");
@@ -218,7 +246,7 @@ namespace ProbablyNuclear
             gameItem.SetName(ModLoc.Localize("item_minibomb"));
             gameItem.SetGameItemType("WEAPON");
             gameItem.SetGameItemType("MUNITION");
-            gameItem.SetValue(110L);
+            gameItem.SetValue(100L);
             gameItem.flavorText = ModLoc.Localize("item_minibomb_flavor");
             AudioHelper.InitGrenade(gameItem);
             ContrabandHelper.InitContrabandItem(gameItem, 2);
@@ -345,7 +373,7 @@ namespace ProbablyNuclear
             GameItem gameItem = ItemDirectory.CreateEmptyItem("throwing_knife");
             gameItem.SetSpriteAndShapeFromMod("probably_nuclear", gameItem.identifier);
             gameItem.SetName(ModLoc.Localize("item_throwing_knife"));
-            gameItem.SetValue(80L);
+            gameItem.SetValue(70L);
             gameItem.flavorText = ModLoc.Localize("item_throwing_knife_flavor");
             gameItem.SetGameItemType("WEAPON");
             AudioHelper.InitBlade(gameItem);
@@ -368,6 +396,33 @@ namespace ProbablyNuclear
 
             gameItem = new ModUplink(gameItem).gameItem;
 
+            return gameItem;
+        }
+
+        public static GameItem MagSmg()
+        {
+            GameItem gameItem = ItemDirectory.CreateEmptyItem("22mm_mag_smg");
+            gameItem.SetSpriteAndShapeFromMod("probably_nuclear", gameItem.identifier);
+            gameItem.SetName(ModLoc.Localize("item_22mm_mag_smg"));
+            gameItem.unitValue = 45L;
+            gameItem.shortDescription = ModLoc.Localize("item_22mm_mag_smg_desc");
+            gameItem.EnableManufacturer("waffle");
+            ContrabandHelper.InitContrabandItem(gameItem, 2);
+
+            GunModHelper.InitGunModMagazine(gameItem);
+            GunModHelper.InitGunMod(gameItem, 20, 15, 0, 0, 0);
+            GunModHelper.InitGunModBaseStats(gameItem, 10, 5, 0, 0, -2);
+            GunModHelper.AllowOnlyWeapon(["c20r"], gameItem);
+            gameItem.parentItemShapeModifierForItemFunc = (GameItem item, GameInventory inventory, SlotMarker _, GridShape _, TagSystem _, GameItem parent) => parent.IsID("c20r") ? new GridShapeBuilder().SetDataFill(1, 1, 1).SetTransform(2, 3, flipped: false, 0) : null;
+            gameItem.parentItemSpriteModifierForItemFunc = delegate (GameItem item, GameInventory inventory, SlotMarker _, GridShape _, TagSystem _, GameItem parent)
+            {
+                List<ItemSpriteModifier> list = new List<ItemSpriteModifier>();
+                if (parent.IsID("c20r"))
+                {
+                    list.Add(new ItemSpriteModifier(ArbitraryModSprite.GetSprite("probably_nuclear", "22mm_mag_smg_view"), new Vector2(18f, -26f)));
+                }
+                return list;
+            };
             return gameItem;
         }
     }

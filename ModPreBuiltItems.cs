@@ -49,26 +49,22 @@ namespace ProbablyNuclear
                 GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("syndicate_soap"));
 
             GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("telecrystal"));
-            if (RNG.Roll(85 * luck))
+            if (RNG.Roll(75 * luck))
                 GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("telecrystal"));
-            if (RNG.Roll(60 * luck))
+            if (RNG.Roll(50 * luck))
                 GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("telecrystal"));
-            if (RNG.Roll(35 * luck))
+            if (RNG.Roll(25 * luck))
                 GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("telecrystal"));
-            if (RNG.Roll(20 * luck))
-                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("telecrystal"));
-            if (RNG.Roll(5 * luck))
+            if (RNG.Roll(10 * luck))
                 GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("telecrystal"));
             if (RNG.Roll(40 * luck))
                 GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("smoke_grenade"));
             if (RNG.Roll(50 * luck))
-                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("heavy_pistol_ammo"));
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("light_pistol_ammo_caseless"));
             if (RNG.Roll(25 * luck))
-                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("heavy_pistol_ammo"));
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("light_pistol_ammo_caseless"));
             if (RNG.Roll(40 * luck))
-                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("heavy_pistol_ammo_p"));
-            if (RNG.Roll(15 * luck))
-                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("heavy_pistol_ammo_p"));
+                GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("light_pistol_ammo_caseless"));
             if (RNG.Roll(60 * luck))
                 GraphUtils.TryAcceptAll(gameItem, DirectoryMaster.Item("zyanide_pill"));
 
@@ -84,7 +80,7 @@ namespace ProbablyNuclear
             {
                 <= 40 => DirectoryMaster.Item("syndicate_soap"),
                 <= 60 => DirectoryMaster.Item("hyperzine_injector"),
-                <= 75 => DirectoryMaster.Item("interdyne_herbals"),
+                <= 80 => DirectoryMaster.Item("interdyne_herbals"),
                 <= 90 => DirectoryMaster.Item("cybersun_pen"),
                 _ => DirectoryMaster.Item("throwing_knife"),
             };
