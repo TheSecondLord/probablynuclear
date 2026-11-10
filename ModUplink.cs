@@ -103,7 +103,8 @@ namespace ProbablyNuclear
         public PixelWindow CreateMenu()
         {
             List<MachineryPanel> panels = new List<MachineryPanel>();
-
+            int size = LocHelper.GetCurrentLocaleCode() == "ru" ? 165 : 100; // Todo make the UI better because this is stupid
+                
             // Add each entry for each category to a vertical stack, then add each stack to a final horizontal stack
             foreach (string category in UplinkCatalog.Keys)
             {
@@ -117,6 +118,7 @@ namespace ProbablyNuclear
                     else
                         text = ModLoc.Localize("machine_uplink_redeem_button", ModLoc.Localize("item_" + entry), entries[entry]);
                     MachineryButton button = new MachineryButton(text, delegate { Redeem(entry, entries[entry]); }, width: 100);
+                    button.SetSize(size);
                     categoryStack.Add(button);
 
                 }

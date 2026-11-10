@@ -1,0 +1,82 @@
+item_cobra,Cobra
+item_cybersun_pen,Ручка Cybersun
+item_c20r,C20-R
+item_emag,Криптографический секвенсор
+item_energy_sword,Энергетический меч
+item_holoparasite_injector,Инъектор голопаразита
+item_hyperzine_injector,Инъектор гиперзина
+item_implanter,Имплантер
+item_interdyne_herbals,Сигареты Interdyne
+item_light_pistol_ammo_caseless,Патроны .22 SR (безгильзовые)
+item_minibomb,Мини-бомба
+item_nuke_disk,Диск ядерной авторизации
+item_suspicious_toolbox,Подозрительный ящик для инструментов
+item_syndicate_box,Оружейный ящик Синдиката
+item_syndicate_business_card,Визитная карточка Синдиката
+item_syndicate_gas_mask,Противогаз Синдиката
+item_syndicate_soap,Мыло Синдиката
+item_telecrystal,Телекристалл
+item_throwing_knife,Метательный нож
+item_uplink,Аплинк
+item_22mm_mag_smg,Магазин .22мм (пистолет-пулемёт)
+
+item_cobra_flavor,Бесшумный пистолет, созданный для скрытных убийств.
+item_cybersun_pen_flavor,Использует передовые технологии и наконечник из твёрдого сплава для стирания чернил и подделки документов.
+item_c20r_flavor,Один из многих вариантов оружия Синдиката. Поговаривают, что этот компактный пистолет-пулемёт состоит на вооружении элитных оперативников Синдиката.
+item_emag_flavor,Фирменный Криптографический секвенсор Синдиката, созданный из взломанной ID-карты.
+item_energy_sword_flavor,Легендарное оружие, которым владели бесчисленные оперативники Синдиката. Его активация непременно привлечёт нежелательное внимание.
+item_holoparasite_injector_flavor,Вершина биоинженерной мысли Cybersun Industries. Хромированный шприц с наномашинами вживляет в нервную систему симбиотического паразита, связанного с хозяином ментально.
+item_hyperzine_injector_flavor,Мощная смесь боевых стимуляторов производства Interdyne. Гораздо сильнее Оксимора.
+item_implanter_flavor,Содержит один из подкожных имплантов Синдиката.
+item_interdyne_herbals_flavor,Сигареты с лекарствами для агентов, которым нужно восстановиться после боя и при этом выглядеть круто.
+item_light_pistol_ammo_caseless_flavor,Пригорошня безгильзовых патронов калибра .22 SR. Созданы для «Cobra» и не оставляют гильз после выстрела.
+item_minibomb_flavor,Легко скрываемая граната, создающая взрыв малого радиуса, но чудовищной мощности.
+item_nuke_disk_flavor,Вы уверены, что то, что вы делаете, действительно того стоит?
+item_suspicious_toolbox_flavor,Создан как для хранения инструментов, так и для яростных ударов в голову.
+item_syndicate_box_flavor,Тайник с высоконелегальным снаряжением Синдиката. Одного владения им достаточно для обвинения в государственной измене станции.
+item_syndicate_business_card_flavor,Клочок бумаги с брендингом Синдиката.
+item_syndicate_gas_mask_flavor,Забрало изготовлено из защитного материала, способного выдерживать удары, и защищать носителя от яркого света.
+item_syndicate_soap_flavor,Брусок ароматизированного мыла. Признан контрабандой из-за брендинга Синдиката.
+item_telecrystal_flavor,Гудит от энергии и слабо светится красным.
+item_throwing_knife_flavor,Лёгкий нож с аэродинамической конструкцией и остриём, достаточно острым, чтобы пробить броню.
+item_uplink_flavor,Старое радио, настроенное на сеть Аплинка Синдиката.
+
+item_22mm_mag_smg_desc,Вмещает 35 патронов .22 для пистолета-пулемёта. Создан для C-20R.
+item_cobra_desc,Заряжается специальными безгильзовыми патронами калибра .22.
+item_cybersun_pen_desc,Функционирует как отвёртка.
+item_c20r_desc, Совместим только с магазинами для пистолета-пулемёта, заряжается патронами калибра .22 
+item_emag_desc,Открывает все замки без исключения.
+item_syndicate_box_desc,Запертый ящик. Раскрашен логотипом Синдиката. Полон припасов. Вряд ли откроется стандартным ключом-картой станции.
+item_uplink_desc,Можно использовать для обмена телекристаллов на ценные предметы Синдиката.
+
+string_info,Информация
+string_warning,Предупреждение
+string_success,Успех
+string_input,Ввод
+string_output,Вывод
+string_configure,Настройка
+string_select_item,Выбор предмета
+
+machine_uplink_info,\nОткройте каталог аплинка, чтобы\nвыбрать предмет для обмена.
+machine_uplink_info_full,\nНе удалось получить предмет:\nсначала уберите предыдущий.
+machine_uplink_info_insufficient,\nНе удалось получить предмет:\nнедостаточно телекристаллов.
+machine_uplink_info_success,\nУспешно получено:\n{0}.
+machine_uplink_category_weapons,Оружие
+machine_uplink_category_guns,Стрелковое
+machine_uplink_category_tools,Инструменты
+machine_uplink_category_medical,Медицина
+machine_uplink_category_other,Прочее
+machine_uplink_redeem_button,{0} - {1}ТК
+machine_uplink_alt_name_ammo_caseless,.22 безгильзовые
+
+corpo_name_interdyne,Interdyne Pharmaceuticals
+corpo_name_gorlex,Gorlex Marauders
+corpo_name_waffle,Waffle Co.
+corpo_name_self,S.E.L.F.
+corpo_name_donk,Donk Co.
+corpo_name_cybersun,Cybersun Industries
+
+name_ex_syndicate_agent,Бывший агент Синдиката
+dialog_ex_syndicate_agent_1,«Мне это больше не нужно, но я слышал, что тебе может понадобиться.»
+dialog_ex_syndicate_agent_2,«Не дай этому попасть в чужие руки. Они узнают, если ты это сделаешь.»
+dialogue_ammo_caseless,.22 безгильзовые
