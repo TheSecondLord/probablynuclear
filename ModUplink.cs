@@ -103,8 +103,13 @@ namespace ProbablyNuclear
         public PixelWindow CreateMenu()
         {
             List<MachineryPanel> panels = new List<MachineryPanel>();
-            int size = LocHelper.GetCurrentLocaleCode() == "ru" ? 165 : 100; // Todo make the UI better because this is stupid
-                
+            // Todo make the UI better because this is stupid
+            int size = 100;
+            if (LocHelper.GetCurrentLocaleCode() == "ru")
+                size = 165;
+            if (LocHelper.GetCurrentLocaleCode() == "fr")
+                size = 110;
+
             // Add each entry for each category to a vertical stack, then add each stack to a final horizontal stack
             foreach (string category in UplinkCatalog.Keys)
             {

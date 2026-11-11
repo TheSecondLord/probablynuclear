@@ -1,0 +1,82 @@
+item_cobra,Cobra
+item_cybersun_pen,Stylo Cybersun
+item_c20r,C20-R
+item_emag,EMAG
+item_energy_sword,Sabre à énergie
+item_holoparasite_injector,Injecteur d'holoparasite
+item_hyperzine_injector,Injecteur d'hyperzine
+item_implanter,Implantateur
+item_interdyne_herbals,Cigarettes Interdyne
+item_light_pistol_ammo_caseless,Munitions .22 SR (sans étui)
+item_minibomb,Mini-bombe
+item_nuke_disk,Disque d'authentification nucléaire
+item_suspicious_toolbox,Boîte à outils suspecte
+item_syndicate_box,Caisse d'armurerie du Syndicat
+item_syndicate_business_card,Carte de visite du Syndicat
+item_syndicate_gas_mask,Masque à gaz du Syndicat
+item_syndicate_soap,Savon du Syndicat
+item_telecrystal,Télécristal
+item_throwing_knife,Couteau de lancer
+item_uplink,Uplink
+item_22mm_mag_smg,Chargeur de PM 22 mm
+
+item_cobra_flavor,Un pistolet équipé d'un silencieux, conçu pour les assassinats discrets.
+item_cybersun_pen_flavor,Une technologie avancée et une pointe en lumière dure permettent d'effacer l'encre et de contrefaire des documents.
+item_c20r_flavor,L'une des nombreuses armes de guerre du Syndicat, ce pistolet-mitrailleur compact serait utilisé par les agents d'élite.
+item_emag_flavor,L'EMAG emblématique du Syndicat, fabriqué à partir d'une carte d'identité piratée.
+item_energy_sword_flavor,Une arme emblématique maniée par d'innombrables agents du Syndicat. L'activer attirerait à coup sûr une attention indésirable.
+item_holoparasite_injector_flavor,La fierté de Cybersun. Implante sous la peau un parasite bioconçu capable de manifester un gardien de lumière dure pour défendre son hôte.
+item_hyperzine_injector_flavor,Un puissant mélange de stimulants de combat produit par Interdyne. Bien plus efficace que l'Oxymore.
+item_implanter_flavor,Contient l'un des nombreux implants sous-cutanés du Syndicat.
+item_interdyne_herbals_flavor,Des cigarettes enrichies en médicaments, pour les agents qui doivent récupérer après un combat tout en gardant la classe.
+item_light_pistol_ammo_caseless_flavor,Une poignée de munitions .22 sans étui. Conçues pour le Cobra, elles ne laissent aucune douille derrière elles.
+item_minibomb_flavor,Une grenade facile à dissimuler qui produit une explosion de courte portée mais dévastatrice.
+item_nuke_disk_flavor,Es-tu sûr que ce que tu fais en vaut vraiment la peine ?
+item_suspicious_toolbox_flavor,Conçue pour ranger des outils et pour frapper violemment des crânes.
+item_syndicate_box_flavor,Une réserve d'équipement du Syndicat, hautement illégal. Sa seule possession constitue une trahison envers la station.
+item_syndicate_business_card_flavor,Un morceau de papier à l'effigie du Syndicat.
+item_syndicate_gas_mask_flavor,La visière est faite d'un matériau protecteur qui résiste aux impacts et protège le porteur des lumières vives.
+item_syndicate_soap_flavor,Une savonnette parfumée. Considérée comme de la contrebande à cause de sa marque du Syndicat.
+item_telecrystal_flavor,Il vibre d'énergie et rougeoie faiblement.
+item_throwing_knife_flavor,Un couteau léger au profil aérodynamique, avec une pointe assez acérée pour transpercer une armure.
+item_uplink_flavor,Une vieille radio, syntonisée sur le réseau Uplink du Syndicat.
+
+item_22mm_mag_smg_desc,Contient 35 cartouches de .22 mm. Conçu pour le C-20R.
+item_cobra_desc,Chambré en munitions .22 sans étui sur mesure.
+item_cybersun_pen_desc,Fonctionne comme un tournevis.
+item_c20r_desc,Chambré en .22. Compatible uniquement avec les chargeurs de PM .22.
+item_emag_desc,Ouvre toutes les serrures, sans exception.
+item_syndicate_box_desc,Une caisse verrouillée, peinte du logo du Syndicat et remplie de fournitures. Peu de chances qu'une carte de la station l'ouvre.
+item_uplink_desc,Permet d'échanger des télécristaux contre des objets du Syndicat de grande valeur.
+
+string_info,Infos
+string_warning,Attention
+string_success,Succès
+string_input,Entrée
+string_output,Sortie
+string_configure,Configurer
+string_select_item,Choisir un objet
+
+machine_uplink_info,\nOuvrez le catalogue de l'uplink pour\nchoisir un objet à échanger.
+machine_uplink_info_full,\nÉchange impossible :\nretirez d'abord l'objet précédent.
+machine_uplink_info_insufficient,\nÉchange impossible :\ntélécristaux insuffisants.
+machine_uplink_info_success,\nÉchange réussi :\n{0}.
+machine_uplink_category_weapons,Armes
+machine_uplink_category_guns,Armes à feu
+machine_uplink_category_tools,Outils
+machine_uplink_category_medical,Médical
+machine_uplink_category_other,Divers
+machine_uplink_redeem_button,{0} - {1}TC
+machine_uplink_alt_name_ammo_caseless,Munitions .22 sans étui
+
+corpo_name_interdyne,Interdyne Pharmaceuticals
+corpo_name_gorlex,Gorlex Marauders
+corpo_name_waffle,Waffle Co.
+corpo_name_self,S.E.L.F.
+corpo_name_donk,Donk Co.
+corpo_name_cybersun,Cybersun Industries
+
+name_ex_syndicate_agent,Ancien agent du Syndicat
+dialog_ex_syndicate_agent_1,Je n'ai plus besoin de tout ça, mais on m'a dit que vous, peut-être.
+dialog_ex_syndicate_agent_2,Ne laissez pas ça tomber entre de mauvaises mains. Ils le sauraient.
+dialogue_ammo_caseless,.22 sans étui

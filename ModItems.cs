@@ -61,7 +61,7 @@ namespace ProbablyNuclear
             gameItem.SetSpriteAndShapeFromMod("probably_nuclear", gameItem.identifier);
             gameItem.SetName(ModLoc.Localize("item_cybersun_pen"));
             gameItem.SetGameItemType("LUXURY_ITEM");
-            gameItem.SetValue(75L);
+            gameItem.SetValue(70L);
             gameItem.shortDescription = ModLoc.Localize("item_cybersun_pen_desc");
             gameItem.flavorText = ModLoc.Localize("item_cybersun_pen_flavor");
             gameItem.EnableManufacturer("cybersun");
@@ -158,7 +158,7 @@ namespace ProbablyNuclear
             gameItem.SetGameItemType("WEAPON");
             gameItem.SetGameItemType("MEDICAL");
             gameItem.EnableTag("ITEM_MEDICAL_TAG");
-            gameItem.SetValue(285L);
+            gameItem.SetValue(295L);
             gameItem.flavorText = ModLoc.Localize("item_holoparasite_injector_flavor");
             gameItem.EnableManufacturer("cybersun");
             ContrabandHelper.InitContrabandItem(gameItem, 3);
@@ -191,7 +191,7 @@ namespace ProbablyNuclear
             gameItem.SetName(ModLoc.Localize("item_implanter"));
             gameItem.SetGameItemType("MEDICAL");
             gameItem.EnableTag("ITEM_MEDICAL_TAG");
-            gameItem.SetValue(150L);
+            gameItem.SetValue(155L);
             gameItem.flavorText = ModLoc.Localize("item_implanter_flavor");
             gameItem.EnableManufacturer("cybersun");
             AudioHelper.InitInjectorAudio(gameItem);
@@ -207,7 +207,7 @@ namespace ProbablyNuclear
             gameItem.SetName(ModLoc.Localize("item_interdyne_herbals"));
             gameItem.EnableTag("CIGARETTE_TAG");
             gameItem.SetGameItemType("SUBSTANCE");
-            gameItem.SetValue(50L);
+            gameItem.SetValue(60L);
             gameItem.flavorText = ModLoc.Localize("item_interdyne_herbals_flavor");
             gameItem.EnableManufacturer("interdyne");
             ContrabandHelper.InitContrabandItem(gameItem, 1);
@@ -246,7 +246,7 @@ namespace ProbablyNuclear
             gameItem.SetName(ModLoc.Localize("item_minibomb"));
             gameItem.SetGameItemType("WEAPON");
             gameItem.SetGameItemType("MUNITION");
-            gameItem.SetValue(100L);
+            gameItem.SetValue(95L);
             gameItem.flavorText = ModLoc.Localize("item_minibomb_flavor");
             AudioHelper.InitGrenade(gameItem);
             ContrabandHelper.InitContrabandItem(gameItem, 2);
@@ -345,7 +345,7 @@ namespace ProbablyNuclear
             GameItem gameItem = ItemDirectory.CreateEmptyItem("syndicate_soap");
             gameItem.SetSpriteAndShapeFromMod("probably_nuclear", gameItem.identifier);
             gameItem.SetName(ModLoc.Localize("item_syndicate_soap"));
-            gameItem.SetValue(30L);
+            gameItem.SetValue(25L);
             gameItem.flavorText = ModLoc.Localize("item_syndicate_soap_flavor");
             gameItem.SetGameItemType("HOUSEHOLD_GOOD");
             gameItem.EnableManufacturer("donk");
